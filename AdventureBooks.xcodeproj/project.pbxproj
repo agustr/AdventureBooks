@@ -1,0 +1,455 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8A8B88D419A212F400F53CA2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8B88D319A212F400F53CA2 /* Foundation.framework */; };
+		8A8B88D619A212F400F53CA2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8B88D519A212F400F53CA2 /* CoreGraphics.framework */; };
+		8A8B88D819A212F400F53CA2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8B88D719A212F400F53CA2 /* UIKit.framework */; };
+		8A8B88DE19A212F400F53CA2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A8B88DC19A212F400F53CA2 /* InfoPlist.strings */; };
+		8A8B88E019A212F400F53CA2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8B88DF19A212F400F53CA2 /* main.m */; };
+		8A8B88E419A212F400F53CA2 /* BookAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8B88E319A212F400F53CA2 /* BookAppDelegate.m */; };
+		8A8B88E619A212F400F53CA2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A8B88E519A212F400F53CA2 /* Images.xcassets */; };
+		8A8B88ED19A212F400F53CA2 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8B88EC19A212F400F53CA2 /* XCTest.framework */; };
+		8A8B88EE19A212F400F53CA2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8B88D319A212F400F53CA2 /* Foundation.framework */; };
+		8A8B88EF19A212F400F53CA2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8B88D719A212F400F53CA2 /* UIKit.framework */; };
+		8A8B88F719A212F400F53CA2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A8B88F519A212F400F53CA2 /* InfoPlist.strings */; };
+		8A8B88F919A212F400F53CA2 /* AdventureBooksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8B88F819A212F400F53CA2 /* AdventureBooksTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8A8B88F019A212F400F53CA2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A8B88C819A212F400F53CA2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A8B88CF19A212F400F53CA2;
+			remoteInfo = AdventureBooks;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8A8B88D019A212F400F53CA2 /* AdventureBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdventureBooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A8B88D319A212F400F53CA2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8A8B88D519A212F400F53CA2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8A8B88D719A212F400F53CA2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8A8B88DB19A212F400F53CA2 /* AdventureBooks-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AdventureBooks-Info.plist"; sourceTree = "<group>"; };
+		8A8B88DD19A212F400F53CA2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8A8B88DF19A212F400F53CA2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8A8B88E119A212F400F53CA2 /* AdventureBooks-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AdventureBooks-Prefix.pch"; sourceTree = "<group>"; };
+		8A8B88E219A212F400F53CA2 /* BookAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookAppDelegate.h; sourceTree = "<group>"; };
+		8A8B88E319A212F400F53CA2 /* BookAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookAppDelegate.m; sourceTree = "<group>"; };
+		8A8B88E519A212F400F53CA2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8A8B88EB19A212F400F53CA2 /* AdventureBooksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdventureBooksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A8B88EC19A212F400F53CA2 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		8A8B88F419A212F400F53CA2 /* AdventureBooksTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AdventureBooksTests-Info.plist"; sourceTree = "<group>"; };
+		8A8B88F619A212F400F53CA2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8A8B88F819A212F400F53CA2 /* AdventureBooksTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdventureBooksTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8A8B88CD19A212F400F53CA2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A8B88D619A212F400F53CA2 /* CoreGraphics.framework in Frameworks */,
+				8A8B88D819A212F400F53CA2 /* UIKit.framework in Frameworks */,
+				8A8B88D419A212F400F53CA2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A8B88E819A212F400F53CA2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A8B88ED19A212F400F53CA2 /* XCTest.framework in Frameworks */,
+				8A8B88EF19A212F400F53CA2 /* UIKit.framework in Frameworks */,
+				8A8B88EE19A212F400F53CA2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8A8B88C719A212F400F53CA2 = {
+			isa = PBXGroup;
+			children = (
+				8A8B88D919A212F400F53CA2 /* AdventureBooks */,
+				8A8B88F219A212F400F53CA2 /* AdventureBooksTests */,
+				8A8B88D219A212F400F53CA2 /* Frameworks */,
+				8A8B88D119A212F400F53CA2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8A8B88D119A212F400F53CA2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8A8B88D019A212F400F53CA2 /* AdventureBooks.app */,
+				8A8B88EB19A212F400F53CA2 /* AdventureBooksTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8A8B88D219A212F400F53CA2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8A8B88D319A212F400F53CA2 /* Foundation.framework */,
+				8A8B88D519A212F400F53CA2 /* CoreGraphics.framework */,
+				8A8B88D719A212F400F53CA2 /* UIKit.framework */,
+				8A8B88EC19A212F400F53CA2 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8A8B88D919A212F400F53CA2 /* AdventureBooks */ = {
+			isa = PBXGroup;
+			children = (
+				8A8B88E219A212F400F53CA2 /* BookAppDelegate.h */,
+				8A8B88E319A212F400F53CA2 /* BookAppDelegate.m */,
+				8A8B88E519A212F400F53CA2 /* Images.xcassets */,
+				8A8B88DA19A212F400F53CA2 /* Supporting Files */,
+			);
+			path = AdventureBooks;
+			sourceTree = "<group>";
+		};
+		8A8B88DA19A212F400F53CA2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8A8B88DB19A212F400F53CA2 /* AdventureBooks-Info.plist */,
+				8A8B88DC19A212F400F53CA2 /* InfoPlist.strings */,
+				8A8B88DF19A212F400F53CA2 /* main.m */,
+				8A8B88E119A212F400F53CA2 /* AdventureBooks-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8A8B88F219A212F400F53CA2 /* AdventureBooksTests */ = {
+			isa = PBXGroup;
+			children = (
+				8A8B88F819A212F400F53CA2 /* AdventureBooksTests.m */,
+				8A8B88F319A212F400F53CA2 /* Supporting Files */,
+			);
+			path = AdventureBooksTests;
+			sourceTree = "<group>";
+		};
+		8A8B88F319A212F400F53CA2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8A8B88F419A212F400F53CA2 /* AdventureBooksTests-Info.plist */,
+				8A8B88F519A212F400F53CA2 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8A8B88CF19A212F400F53CA2 /* AdventureBooks */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A8B88FC19A212F400F53CA2 /* Build configuration list for PBXNativeTarget "AdventureBooks" */;
+			buildPhases = (
+				8A8B88CC19A212F400F53CA2 /* Sources */,
+				8A8B88CD19A212F400F53CA2 /* Frameworks */,
+				8A8B88CE19A212F400F53CA2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AdventureBooks;
+			productName = AdventureBooks;
+			productReference = 8A8B88D019A212F400F53CA2 /* AdventureBooks.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8A8B88EA19A212F400F53CA2 /* AdventureBooksTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A8B88FF19A212F400F53CA2 /* Build configuration list for PBXNativeTarget "AdventureBooksTests" */;
+			buildPhases = (
+				8A8B88E719A212F400F53CA2 /* Sources */,
+				8A8B88E819A212F400F53CA2 /* Frameworks */,
+				8A8B88E919A212F400F53CA2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8A8B88F119A212F400F53CA2 /* PBXTargetDependency */,
+			);
+			name = AdventureBooksTests;
+			productName = AdventureBooksTests;
+			productReference = 8A8B88EB19A212F400F53CA2 /* AdventureBooksTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8A8B88C819A212F400F53CA2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = Book;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Agust Rafnsson";
+				TargetAttributes = {
+					8A8B88EA19A212F400F53CA2 = {
+						TestTargetID = 8A8B88CF19A212F400F53CA2;
+					};
+				};
+			};
+			buildConfigurationList = 8A8B88CB19A212F400F53CA2 /* Build configuration list for PBXProject "AdventureBooks" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 8A8B88C719A212F400F53CA2;
+			productRefGroup = 8A8B88D119A212F400F53CA2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8A8B88CF19A212F400F53CA2 /* AdventureBooks */,
+				8A8B88EA19A212F400F53CA2 /* AdventureBooksTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8A8B88CE19A212F400F53CA2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A8B88DE19A212F400F53CA2 /* InfoPlist.strings in Resources */,
+				8A8B88E619A212F400F53CA2 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A8B88E919A212F400F53CA2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A8B88F719A212F400F53CA2 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8A8B88CC19A212F400F53CA2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A8B88E019A212F400F53CA2 /* main.m in Sources */,
+				8A8B88E419A212F400F53CA2 /* BookAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A8B88E719A212F400F53CA2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A8B88F919A212F400F53CA2 /* AdventureBooksTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8A8B88F119A212F400F53CA2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A8B88CF19A212F400F53CA2 /* AdventureBooks */;
+			targetProxy = 8A8B88F019A212F400F53CA2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8A8B88DC19A212F400F53CA2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8A8B88DD19A212F400F53CA2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8A8B88F519A212F400F53CA2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8A8B88F619A212F400F53CA2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8A8B88FA19A212F400F53CA2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8A8B88FB19A212F400F53CA2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8A8B88FD19A212F400F53CA2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AdventureBooks/AdventureBooks-Prefix.pch";
+				INFOPLIST_FILE = "AdventureBooks/AdventureBooks-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		8A8B88FE19A212F400F53CA2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AdventureBooks/AdventureBooks-Prefix.pch";
+				INFOPLIST_FILE = "AdventureBooks/AdventureBooks-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		8A8B890019A212F400F53CA2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AdventureBooks.app/AdventureBooks";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AdventureBooks/AdventureBooks-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "AdventureBooksTests/AdventureBooksTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		8A8B890119A212F400F53CA2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AdventureBooks.app/AdventureBooks";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AdventureBooks/AdventureBooks-Prefix.pch";
+				INFOPLIST_FILE = "AdventureBooksTests/AdventureBooksTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8A8B88CB19A212F400F53CA2 /* Build configuration list for PBXProject "AdventureBooks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A8B88FA19A212F400F53CA2 /* Debug */,
+				8A8B88FB19A212F400F53CA2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A8B88FC19A212F400F53CA2 /* Build configuration list for PBXNativeTarget "AdventureBooks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A8B88FD19A212F400F53CA2 /* Debug */,
+				8A8B88FE19A212F400F53CA2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8A8B88FF19A212F400F53CA2 /* Build configuration list for PBXNativeTarget "AdventureBooksTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A8B890019A212F400F53CA2 /* Debug */,
+				8A8B890119A212F400F53CA2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8A8B88C819A212F400F53CA2 /* Project object */;
+}
