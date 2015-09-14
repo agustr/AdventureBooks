@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A14218A19B9F08E00395714 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A14218919B9F08E00395714 /* AVFoundation.framework */; };
+		8A2DDF4C19BE133A0042E434 /* BundeledStories in Resources */ = {isa = PBXBuildFile; fileRef = 8A2DDF4B19BE133A0042E434 /* BundeledStories */; };
+		8A56526A1B84BDA500827314 /* UITableViewCell+ProgressIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A5652691B84BDA500827314 /* UITableViewCell+ProgressIndicator.m */; };
+		8A56526D1B85A05300827314 /* StoreTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A56526C1B85A05300827314 /* StoreTableViewCell.m */; };
+		8A7BE35419C07B470002502C /* BookSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7BE35319C07B470002502C /* BookSettingsViewController.m */; };
+		8A84FA1419B8BAAE003C7F0F /* BookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A84FA1319B8BAAE003C7F0F /* BookViewController.m */; };
+		8A84FA1719B999A6003C7F0F /* BookPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A84FA1619B999A6003C7F0F /* BookPageViewController.m */; };
 		8A8B88D419A212F400F53CA2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8B88D319A212F400F53CA2 /* Foundation.framework */; };
 		8A8B88D619A212F400F53CA2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8B88D519A212F400F53CA2 /* CoreGraphics.framework */; };
 		8A8B88D819A212F400F53CA2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8B88D719A212F400F53CA2 /* UIKit.framework */; };
@@ -19,6 +26,19 @@
 		8A8B88EF19A212F400F53CA2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8B88D719A212F400F53CA2 /* UIKit.framework */; };
 		8A8B88F719A212F400F53CA2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A8B88F519A212F400F53CA2 /* InfoPlist.strings */; };
 		8A8B88F919A212F400F53CA2 /* AdventureBooksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8B88F819A212F400F53CA2 /* AdventureBooksTests.m */; };
+		8A8B890319A2135500F53CA2 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A8B890219A2135500F53CA2 /* iPhone.storyboard */; };
+		8A8B890619A21DF700F53CA2 /* Library.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8B890519A21DF700F53CA2 /* Library.m */; };
+		8A8B890919A2216100F53CA2 /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8B890819A2216100F53CA2 /* Book.m */; };
+		8A8B890C19A226B100F53CA2 /* Page.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8B890B19A226B100F53CA2 /* Page.m */; };
+		8A8B890F19A2605D00F53CA2 /* LibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8B890E19A2605D00F53CA2 /* LibraryViewController.m */; };
+		8ABB5B4119C1DCE500906FF5 /* play-button-vector.png in Resources */ = {isa = PBXBuildFile; fileRef = 8ABB5B4019C1DCE500906FF5 /* play-button-vector.png */; };
+		8ABB5B4419C2214600906FF5 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 8ABB5B4219C2214600906FF5 /* settings.png */; };
+		8ABB5B4519C2214600906FF5 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 8ABB5B4319C2214600906FF5 /* home.png */; };
+		8AEADE2019DD6F16009F104C /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AEADE1D19DD6F16009F104C /* IAPHelper.m */; };
+		8AEADE2519DD706C009F104C /* StoryIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AEADE2419DD706C009F104C /* StoryIAPHelper.m */; };
+		8AEADE2719DD74AF009F104C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AEADE2619DD74AF009F104C /* StoreKit.framework */; };
+		8AEADE2919DD8968009F104C /* books.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8AEADE2819DD8968009F104C /* books.jpg */; };
+		8AED97BF19A7344F00BC47C3 /* jamieson_plate1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8AED97BE19A7344F00BC47C3 /* jamieson_plate1.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +52,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8A14218919B9F08E00395714 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		8A2DDF4B19BE133A0042E434 /* BundeledStories */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BundeledStories; sourceTree = "<group>"; };
+		8A5652681B84BDA500827314 /* UITableViewCell+ProgressIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+ProgressIndicator.h"; sourceTree = "<group>"; };
+		8A5652691B84BDA500827314 /* UITableViewCell+ProgressIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+ProgressIndicator.m"; sourceTree = "<group>"; };
+		8A56526B1B85A05300827314 /* StoreTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoreTableViewCell.h; path = ../StoreTableViewCell.h; sourceTree = "<group>"; };
+		8A56526C1B85A05300827314 /* StoreTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreTableViewCell.m; path = ../StoreTableViewCell.m; sourceTree = "<group>"; };
+		8A7BE35219C07B470002502C /* BookSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookSettingsViewController.h; sourceTree = "<group>"; };
+		8A7BE35319C07B470002502C /* BookSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookSettingsViewController.m; sourceTree = "<group>"; };
+		8A84FA1219B8BAAE003C7F0F /* BookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookViewController.h; sourceTree = "<group>"; };
+		8A84FA1319B8BAAE003C7F0F /* BookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookViewController.m; sourceTree = "<group>"; };
+		8A84FA1519B999A6003C7F0F /* BookPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookPageViewController.h; sourceTree = "<group>"; };
+		8A84FA1619B999A6003C7F0F /* BookPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookPageViewController.m; sourceTree = "<group>"; };
 		8A8B88D019A212F400F53CA2 /* AdventureBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdventureBooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A8B88D319A212F400F53CA2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8A8B88D519A212F400F53CA2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -48,6 +80,25 @@
 		8A8B88F419A212F400F53CA2 /* AdventureBooksTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AdventureBooksTests-Info.plist"; sourceTree = "<group>"; };
 		8A8B88F619A212F400F53CA2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8A8B88F819A212F400F53CA2 /* AdventureBooksTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdventureBooksTests.m; sourceTree = "<group>"; };
+		8A8B890219A2135500F53CA2 /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
+		8A8B890419A21DF700F53CA2 /* Library.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Library.h; sourceTree = "<group>"; };
+		8A8B890519A21DF700F53CA2 /* Library.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Library.m; sourceTree = "<group>"; };
+		8A8B890719A2216100F53CA2 /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
+		8A8B890819A2216100F53CA2 /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
+		8A8B890A19A226B100F53CA2 /* Page.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Page.h; sourceTree = "<group>"; };
+		8A8B890B19A226B100F53CA2 /* Page.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Page.m; sourceTree = "<group>"; };
+		8A8B890D19A2605D00F53CA2 /* LibraryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibraryViewController.h; sourceTree = "<group>"; };
+		8A8B890E19A2605D00F53CA2 /* LibraryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibraryViewController.m; sourceTree = "<group>"; };
+		8ABB5B4019C1DCE500906FF5 /* play-button-vector.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play-button-vector.png"; sourceTree = "<group>"; };
+		8ABB5B4219C2214600906FF5 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		8ABB5B4319C2214600906FF5 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
+		8AEADE1C19DD6F16009F104C /* IAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPHelper.h; sourceTree = "<group>"; };
+		8AEADE1D19DD6F16009F104C /* IAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPHelper.m; sourceTree = "<group>"; };
+		8AEADE2319DD706C009F104C /* StoryIAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryIAPHelper.h; sourceTree = "<group>"; };
+		8AEADE2419DD706C009F104C /* StoryIAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryIAPHelper.m; sourceTree = "<group>"; };
+		8AEADE2619DD74AF009F104C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		8AEADE2819DD8968009F104C /* books.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = books.jpg; sourceTree = "<group>"; };
+		8AED97BE19A7344F00BC47C3 /* jamieson_plate1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = jamieson_plate1.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +106,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A14218A19B9F08E00395714 /* AVFoundation.framework in Frameworks */,
 				8A8B88D619A212F400F53CA2 /* CoreGraphics.framework in Frameworks */,
+				8AEADE2719DD74AF009F104C /* StoreKit.framework in Frameworks */,
 				8A8B88D819A212F400F53CA2 /* UIKit.framework in Frameworks */,
 				8A8B88D419A212F400F53CA2 /* Foundation.framework in Frameworks */,
 			);
@@ -77,6 +130,9 @@
 		8A8B88C719A212F400F53CA2 = {
 			isa = PBXGroup;
 			children = (
+				8AEADE2219DD6F63009F104C /* Library */,
+				8AED23B71BA6AFBC008BB724 /* StoreKitInterface */,
+				8AED23B61BA6AF83008BB724 /* ViewControllers */,
 				8A8B88D919A212F400F53CA2 /* AdventureBooks */,
 				8A8B88F219A212F400F53CA2 /* AdventureBooksTests */,
 				8A8B88D219A212F400F53CA2 /* Frameworks */,
@@ -96,6 +152,8 @@
 		8A8B88D219A212F400F53CA2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8AEADE2619DD74AF009F104C /* StoreKit.framework */,
+				8A14218919B9F08E00395714 /* AVFoundation.framework */,
 				8A8B88D319A212F400F53CA2 /* Foundation.framework */,
 				8A8B88D519A212F400F53CA2 /* CoreGraphics.framework */,
 				8A8B88D719A212F400F53CA2 /* UIKit.framework */,
@@ -107,6 +165,7 @@
 		8A8B88D919A212F400F53CA2 /* AdventureBooks */ = {
 			isa = PBXGroup;
 			children = (
+				8AED97BD19A7342900BC47C3 /* Graphics */,
 				8A8B88E219A212F400F53CA2 /* BookAppDelegate.h */,
 				8A8B88E319A212F400F53CA2 /* BookAppDelegate.m */,
 				8A8B88E519A212F400F53CA2 /* Images.xcassets */,
@@ -118,6 +177,7 @@
 		8A8B88DA19A212F400F53CA2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8A2DDF4B19BE133A0042E434 /* BundeledStories */,
 				8A8B88DB19A212F400F53CA2 /* AdventureBooks-Info.plist */,
 				8A8B88DC19A212F400F53CA2 /* InfoPlist.strings */,
 				8A8B88DF19A212F400F53CA2 /* main.m */,
@@ -142,6 +202,63 @@
 				8A8B88F519A212F400F53CA2 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8AEADE2219DD6F63009F104C /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				8A8B890419A21DF700F53CA2 /* Library.h */,
+				8A8B890519A21DF700F53CA2 /* Library.m */,
+				8A8B890719A2216100F53CA2 /* Book.h */,
+				8A8B890819A2216100F53CA2 /* Book.m */,
+				8A8B890A19A226B100F53CA2 /* Page.h */,
+				8A8B890B19A226B100F53CA2 /* Page.m */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		8AED23B61BA6AF83008BB724 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8A8B890219A2135500F53CA2 /* iPhone.storyboard */,
+				8A7BE35219C07B470002502C /* BookSettingsViewController.h */,
+				8A7BE35319C07B470002502C /* BookSettingsViewController.m */,
+				8A84FA1519B999A6003C7F0F /* BookPageViewController.h */,
+				8A84FA1619B999A6003C7F0F /* BookPageViewController.m */,
+				8A8B890D19A2605D00F53CA2 /* LibraryViewController.h */,
+				8A8B890E19A2605D00F53CA2 /* LibraryViewController.m */,
+				8A5652681B84BDA500827314 /* UITableViewCell+ProgressIndicator.h */,
+				8A5652691B84BDA500827314 /* UITableViewCell+ProgressIndicator.m */,
+				8A84FA1219B8BAAE003C7F0F /* BookViewController.h */,
+				8A84FA1319B8BAAE003C7F0F /* BookViewController.m */,
+				8A56526B1B85A05300827314 /* StoreTableViewCell.h */,
+				8A56526C1B85A05300827314 /* StoreTableViewCell.m */,
+			);
+			name = ViewControllers;
+			path = AdventureBooks;
+			sourceTree = "<group>";
+		};
+		8AED23B71BA6AFBC008BB724 /* StoreKitInterface */ = {
+			isa = PBXGroup;
+			children = (
+				8AEADE1C19DD6F16009F104C /* IAPHelper.h */,
+				8AEADE1D19DD6F16009F104C /* IAPHelper.m */,
+				8AEADE2319DD706C009F104C /* StoryIAPHelper.h */,
+				8AEADE2419DD706C009F104C /* StoryIAPHelper.m */,
+			);
+			name = StoreKitInterface;
+			sourceTree = "<group>";
+		};
+		8AED97BD19A7342900BC47C3 /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				8AEADE2819DD8968009F104C /* books.jpg */,
+				8ABB5B4219C2214600906FF5 /* settings.png */,
+				8ABB5B4319C2214600906FF5 /* home.png */,
+				8ABB5B4019C1DCE500906FF5 /* play-button-vector.png */,
+				8AED97BE19A7344F00BC47C3 /* jamieson_plate1.jpg */,
+			);
+			name = Graphics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +309,14 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Agust Rafnsson";
 				TargetAttributes = {
+					8A8B88CF19A212F400F53CA2 = {
+						DevelopmentTeam = BY8JMSGP7Z;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
+					};
 					8A8B88EA19A212F400F53CA2 = {
 						TestTargetID = 8A8B88CF19A212F400F53CA2;
 					};
@@ -220,7 +345,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8ABB5B4419C2214600906FF5 /* settings.png in Resources */,
+				8ABB5B4119C1DCE500906FF5 /* play-button-vector.png in Resources */,
+				8ABB5B4519C2214600906FF5 /* home.png in Resources */,
+				8AED97BF19A7344F00BC47C3 /* jamieson_plate1.jpg in Resources */,
 				8A8B88DE19A212F400F53CA2 /* InfoPlist.strings in Resources */,
+				8A2DDF4C19BE133A0042E434 /* BundeledStories in Resources */,
+				8A8B890319A2135500F53CA2 /* iPhone.storyboard in Resources */,
+				8AEADE2919DD8968009F104C /* books.jpg in Resources */,
 				8A8B88E619A212F400F53CA2 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,7 +372,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A56526A1B84BDA500827314 /* UITableViewCell+ProgressIndicator.m in Sources */,
+				8A8B890F19A2605D00F53CA2 /* LibraryViewController.m in Sources */,
+				8A8B890C19A226B100F53CA2 /* Page.m in Sources */,
+				8A7BE35419C07B470002502C /* BookSettingsViewController.m in Sources */,
+				8A84FA1419B8BAAE003C7F0F /* BookViewController.m in Sources */,
+				8A84FA1719B999A6003C7F0F /* BookPageViewController.m in Sources */,
+				8A8B890919A2216100F53CA2 /* Book.m in Sources */,
+				8A8B890619A21DF700F53CA2 /* Library.m in Sources */,
+				8A56526D1B85A05300827314 /* StoreTableViewCell.m in Sources */,
 				8A8B88E019A212F400F53CA2 /* main.m in Sources */,
+				8AEADE2019DD6F16009F104C /* IAPHelper.m in Sources */,
+				8AEADE2519DD706C009F104C /* StoryIAPHelper.m in Sources */,
 				8A8B88E419A212F400F53CA2 /* BookAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,10 +503,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AdventureBooks/AdventureBooks-Prefix.pch";
 				INFOPLIST_FILE = "AdventureBooks/AdventureBooks-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -373,10 +521,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AdventureBooks/AdventureBooks-Prefix.pch";
 				INFOPLIST_FILE = "AdventureBooks/AdventureBooks-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -440,6 +593,7 @@
 				8A8B88FE19A212F400F53CA2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8A8B88FF19A212F400F53CA2 /* Build configuration list for PBXNativeTarget "AdventureBooksTests" */ = {
 			isa = XCConfigurationList;
@@ -448,6 +602,7 @@
 				8A8B890119A212F400F53CA2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
