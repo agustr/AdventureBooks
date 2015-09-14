@@ -8,14 +8,20 @@
 
 #import "BookAppDelegate.h"
 
+
 @implementation BookAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    //self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
+    
+    //self.window.backgroundColor = [UIColor whiteColor];
+    //[self.window makeKeyAndVisible];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:@{ @"showText" : @YES }];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:@{ @"autoPageTurning" : @YES }];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:@{ @"playAudio" : @YES }];
+    
     return YES;
 }
 
