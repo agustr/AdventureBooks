@@ -39,6 +39,7 @@
 		8AEADE2719DD74AF009F104C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AEADE2619DD74AF009F104C /* StoreKit.framework */; };
 		8AEADE2919DD8968009F104C /* books.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8AEADE2819DD8968009F104C /* books.jpg */; };
 		8AED97BF19A7344F00BC47C3 /* jamieson_plate1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8AED97BE19A7344F00BC47C3 /* jamieson_plate1.jpg */; };
+		A8A25C4C2507A59100101C4E /* BundeledStories in Resources */ = {isa = PBXBuildFile; fileRef = A8A25C4B2507A59100101C4E /* BundeledStories */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		8AEADE2619DD74AF009F104C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		8AEADE2819DD8968009F104C /* books.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = books.jpg; sourceTree = "<group>"; };
 		8AED97BE19A7344F00BC47C3 /* jamieson_plate1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = jamieson_plate1.jpg; sourceTree = "<group>"; };
+		A8A25C4B2507A59100101C4E /* BundeledStories */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BundeledStories; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 				8A8B88F219A212F400F53CA2 /* AdventureBooksTests */,
 				8A8B88D219A212F400F53CA2 /* Frameworks */,
 				8A8B88D119A212F400F53CA2 /* Products */,
+				A8A25C4B2507A59100101C4E /* BundeledStories */,
 			);
 			sourceTree = "<group>";
 		};
@@ -327,6 +330,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 8A8B88C719A212F400F53CA2;
@@ -352,6 +356,7 @@
 				8A8B88DE19A212F400F53CA2 /* InfoPlist.strings in Resources */,
 				8A2DDF4C19BE133A0042E434 /* BundeledStories in Resources */,
 				8A8B890319A2135500F53CA2 /* iPhone.storyboard in Resources */,
+				A8A25C4C2507A59100101C4E /* BundeledStories in Resources */,
 				8AEADE2919DD8968009F104C /* books.jpg in Resources */,
 				8A8B88E619A212F400F53CA2 /* Images.xcassets in Resources */,
 			);
