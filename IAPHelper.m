@@ -240,7 +240,7 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
                 
                 NSArray *subpaths = [fm contentsOfDirectoryAtURL:contentsUrl
                                     includingPropertiesForKeys:nil
-                                    options:nil
+                                    options:NSDirectoryEnumerationSkipsHiddenFiles
                                     error:&err];
                 if (subpaths.count ==0) {
                     return;

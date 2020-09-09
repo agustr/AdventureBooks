@@ -132,7 +132,7 @@
 }
 
 
--(void)layoutPage{
+-(void)layoutPage {
     
     [self showInterface];
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"showText"]||!self.myPage.textURL) {
@@ -168,8 +168,7 @@
         NSLog(@"should move text up");
         [UIView animateWithDuration:0.3
                          animations:^{
-                             _pageImageViewDistanceFromBottom.constant = textViewDistanceFromBottom;
-                             //[self.view layoutIfNeeded]; // Called on parent view
+                            self.pageImageViewDistanceFromBottom.constant = textViewDistanceFromBottom;
                          }
                          completion:^(BOOL finished) {
                          }];
@@ -325,12 +324,6 @@
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"autoPageTurning"]) {
         [(BookViewController*)self.parentViewController turnToPageAfterViewController:self];
     }
-}
--(void)audioPlayerBeginInterruption:(AVAudioPlayer *)player{
-    //pause the playback
-}
--(void)audioPlayerEndInterruption:(AVAudioPlayer *)player withOptions:(NSUInteger)flags{
-    //continue playing from a second earlier
 }
 
 @end
