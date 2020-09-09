@@ -208,15 +208,16 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [self presentViewController:vc animated:YES completion:Nil];
 }
 
--(void)getProducts{
+-(void) getProducts {
     [[StoryIAPHelper sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
         if (success) {
             self.products = products;
             NSLog(@"the number of products found were : %lu", (unsigned long)self.products.count);
             [self createStoreLibrary];
-            [self.libraryList reloadData];
+            dispatch_async(dispatch_get_main_queue(), ^(void){
+                [self.libraryList reloadData];
+            });
         }
-        //self.refreshcontrol end refreshing
     }];
 }
 

@@ -37,31 +37,11 @@
     return self;
 }
 
--(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
-
-}
-
--(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
-
-}
-
--(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
-{
-    
-}
 -(void)viewDidAppear:(BOOL)animated{
-    NSLog(@"Super viewDidAppear");
     [super viewDidAppear:animated];
-        NSLog(@"Super viewDidAppear");
-    NSLog(@"[self.view layoutSubviews]");
     [self.view layoutSubviews];
-        NSLog(@"[self.view layoutSubviews]");
-        NSLog(@"[self layoutPage];");
     [self layoutPage];
-            NSLog(@"[self layoutPage];");
     
-    
-        NSLog(@"view did appearview did appearview did appearview did appearview did appearview did appearview did appearview did appearview did appearview did appearview did appearview did appearview did appearview did appearview did appearview did appearview did appearview did appearview did appearview did appearview did appearview did appearview did appearview did appearview did appearview did appearview did appearview did appearview did appearview did appearview did appearview did appearview did appearview did appearview did appearview did appearview did appearview did appear");
     [self performSelector:@selector(delayedAppear) withObject:nil afterDelay:0.0f];
     
 }
@@ -139,7 +119,6 @@
     }
 }
 - (IBAction)singleTapGesture:(id)sender {
-    NSLog(@"single tap");
     
     if (_isShowingInterface) {
         //Hide the interface
@@ -154,14 +133,6 @@
 
 
 -(void)layoutPage{
-    
-    /*
-     NSLog(@"providing switch for productIdentifier %@...", productIdentifier);
-     [_purchasedProductIdentifiers addObject:productIdentifier];
-     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:productIdentifier];
-     [[NSUserDefaults standardUserDefaults] synchronize];
-     [[NSNotificationCenter defaultCenter] postNotificationName:IAPHelperProductPurchasedNotification object:productIdentifier userInfo:nil];
-     */
     
     [self showInterface];
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"showText"]||!self.myPage.textURL) {
@@ -213,7 +184,6 @@
         _pageTextViewDistanceFromBottom.constant=moveTextBy;
         return;
     }
-    [self.view layoutSubviews];
 }
 
 -(void)showInterface{
@@ -239,7 +209,6 @@
     
     else{
         //Show the interface
-        NSLog(@"YES isShowingInterface");
         [self.view bringSubviewToFront:_playButtonImage];
         if ([[NSUserDefaults standardUserDefaults] boolForKey:@"playAudio"]) {
             [_playButton setHidden:NO];
@@ -267,7 +236,6 @@
     CGSize scaledImageSize = CGSizeMake(imageSize.width*imageScale, imageSize.height*imageScale);
 
     CGFloat distanceFromBottom = (_pageImageView.frame.size.height - scaledImageSize.height)/2;
-    NSLog(@"images distance from bottom: %f", distanceFromBottom);
     return distanceFromBottom;
 }
 
@@ -287,7 +255,6 @@
     }
     
     else {
-        NSLog(@"stopped audio");
         [self.pageAudio stop];
         [self.pageAudio setVolume:1];
         [self.pageAudio setCurrentTime: 0];
@@ -322,12 +289,10 @@
 
 -(void)setPageAudio:(AVAudioPlayer *)pageAudio
 {
-    NSLog(@"Set the audio");
     _pageAudio = pageAudio;
 }
 
 -(void)playAudio{
-    NSLog(@"bool for key 'playAudio': %d", [[NSUserDefaults standardUserDefaults] boolForKey:@"playAudio"]);
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"playAudio"]) {
         NSLog(@"sending play");
         [self.pageAudio play];
