@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <AVFoundation/AVAudioPlayer.h>
+#import <AVFoundation/AVFoundation.h>
 #import "Page.h"
 
 @interface BookPageViewController : UIViewController <AVAudioPlayerDelegate>

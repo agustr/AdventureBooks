@@ -1,11 +1,3 @@
-//
-//  StoreTableViewCell.m
-//  AdventureBooks
-//
-//  Created by Agust Rafnsson on 20/08/15.
-//  Copyright (c) 2015 Agust Rafnsson. All rights reserved.
-//
-
 #import "StoreTableViewCell.h"
 
 @interface StoreTableViewCell ()

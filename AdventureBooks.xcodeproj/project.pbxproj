@@ -7,15 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8A14218A19B9F08E00395714 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A14218919B9F08E00395714 /* AVFoundation.framework */; };
 		8A56526A1B84BDA500827314 /* UITableViewCell+ProgressIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A5652691B84BDA500827314 /* UITableViewCell+ProgressIndicator.m */; };
 		8A56526D1B85A05300827314 /* StoreTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A56526C1B85A05300827314 /* StoreTableViewCell.m */; };
 		8A7BE35419C07B470002502C /* BookSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7BE35319C07B470002502C /* BookSettingsViewController.m */; };
 		8A84FA1419B8BAAE003C7F0F /* BookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A84FA1319B8BAAE003C7F0F /* BookViewController.m */; };
 		8A84FA1719B999A6003C7F0F /* BookPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A84FA1619B999A6003C7F0F /* BookPageViewController.m */; };
-		8A8B88D419A212F400F53CA2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8B88D319A212F400F53CA2 /* Foundation.framework */; };
-		8A8B88D619A212F400F53CA2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8B88D519A212F400F53CA2 /* CoreGraphics.framework */; };
-		8A8B88D819A212F400F53CA2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8B88D719A212F400F53CA2 /* UIKit.framework */; };
 		8A8B88DE19A212F400F53CA2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A8B88DC19A212F400F53CA2 /* InfoPlist.strings */; };
 		8A8B88E019A212F400F53CA2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8B88DF19A212F400F53CA2 /* main.m */; };
 		8A8B88E419A212F400F53CA2 /* BookAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8B88E319A212F400F53CA2 /* BookAppDelegate.m */; };
@@ -35,9 +31,12 @@
 		8ABB5B4519C2214600906FF5 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 8ABB5B4319C2214600906FF5 /* home.png */; };
 		8AEADE2019DD6F16009F104C /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AEADE1D19DD6F16009F104C /* IAPHelper.m */; };
 		8AEADE2519DD706C009F104C /* StoryIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AEADE2419DD706C009F104C /* StoryIAPHelper.m */; };
-		8AEADE2719DD74AF009F104C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AEADE2619DD74AF009F104C /* StoreKit.framework */; };
 		8AEADE2919DD8968009F104C /* books.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8AEADE2819DD8968009F104C /* books.jpg */; };
 		8AED97BF19A7344F00BC47C3 /* jamieson_plate1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8AED97BE19A7344F00BC47C3 /* jamieson_plate1.jpg */; };
+		A80122792508C98C004091C5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A14218919B9F08E00395714 /* AVFoundation.framework */; };
+		A801227A2508C9C6004091C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8B88D319A212F400F53CA2 /* Foundation.framework */; };
+		A801227B2508C9E8004091C5 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AEADE2619DD74AF009F104C /* StoreKit.framework */; };
+		A801227C2508C9F3004091C5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8B88D719A212F400F53CA2 /* UIKit.framework */; };
 		A8A25C4F2507B24500101C4E /* BundeledStories in Resources */ = {isa = PBXBuildFile; fileRef = A8A25C4B2507A59100101C4E /* BundeledStories */; };
 /* End PBXBuildFile section */
 
@@ -103,18 +102,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8A8B88CD19A212F400F53CA2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8A14218A19B9F08E00395714 /* AVFoundation.framework in Frameworks */,
-				8A8B88D619A212F400F53CA2 /* CoreGraphics.framework in Frameworks */,
-				8AEADE2719DD74AF009F104C /* StoreKit.framework in Frameworks */,
-				8A8B88D819A212F400F53CA2 /* UIKit.framework in Frameworks */,
-				8A8B88D419A212F400F53CA2 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8A8B88E819A212F400F53CA2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -122,6 +109,17 @@
 				8A8B88ED19A212F400F53CA2 /* XCTest.framework in Frameworks */,
 				8A8B88EF19A212F400F53CA2 /* UIKit.framework in Frameworks */,
 				8A8B88EE19A212F400F53CA2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A80122782508C97D004091C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A801227C2508C9F3004091C5 /* UIKit.framework in Frameworks */,
+				A801227B2508C9E8004091C5 /* StoreKit.framework in Frameworks */,
+				A801227A2508C9C6004091C5 /* Foundation.framework in Frameworks */,
+				A80122792508C98C004091C5 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,8 +269,8 @@
 			buildConfigurationList = 8A8B88FC19A212F400F53CA2 /* Build configuration list for PBXNativeTarget "AdventureBooks" */;
 			buildPhases = (
 				8A8B88CC19A212F400F53CA2 /* Sources */,
-				8A8B88CD19A212F400F53CA2 /* Frameworks */,
 				8A8B88CE19A212F400F53CA2 /* Resources */,
+				A80122782508C97D004091C5 /* Frameworks */,
 			);
 			buildRules = (
 			);
