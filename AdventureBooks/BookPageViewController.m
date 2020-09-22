@@ -293,11 +293,12 @@
 
 -(void)playAudio{
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"playAudio"]) {
-        NSLog(@"sending play");
         [self.pageAudio play];
+        [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
     }
     else{
         [self.pageAudio stop];
+        [[UIApplication sharedApplication] setIdleTimerDisabled:NO];
     }
 }
 
@@ -320,6 +321,7 @@
 }
 
 -(void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{
+    [[UIApplication sharedApplication] setIdleTimerDisabled:NO];
     //When the sound finished playing just turn the page
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"autoPageTurning"]) {
         [(BookViewController*)self.parentViewController turnToPageAfterViewController:self];

@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8A8B88CF19A212F400F53CA2"
-               BuildableName = "AdventureBooks.app"
-               BlueprintName = "AdventureBooks"
+               BuildableName = "&#xc6;vinty&#x301;ri.app"
+               BlueprintName = "&#xc6;vint&#xfd;ri"
                ReferencedContainer = "container:AdventureBooks.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -55,8 +55,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8A8B88CF19A212F400F53CA2"
-            BuildableName = "AdventureBooks.app"
-            BlueprintName = "AdventureBooks"
+            BuildableName = "&#xc6;vinty&#x301;ri.app"
+            BlueprintName = "&#xc6;vint&#xfd;ri"
             ReferencedContainer = "container:AdventureBooks.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -72,8 +72,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8A8B88CF19A212F400F53CA2"
-            BuildableName = "AdventureBooks.app"
-            BlueprintName = "AdventureBooks"
+            BuildableName = "&#xc6;vinty&#x301;ri.app"
+            BlueprintName = "&#xc6;vint&#xfd;ri"
             ReferencedContainer = "container:AdventureBooks.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

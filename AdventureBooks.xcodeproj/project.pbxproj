@@ -63,7 +63,7 @@
 		8A84FA1319B8BAAE003C7F0F /* BookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookViewController.m; sourceTree = "<group>"; };
 		8A84FA1519B999A6003C7F0F /* BookPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookPageViewController.h; sourceTree = "<group>"; };
 		8A84FA1619B999A6003C7F0F /* BookPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookPageViewController.m; sourceTree = "<group>"; };
-		8A8B88D019A212F400F53CA2 /* AdventureBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdventureBooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A8B88D019A212F400F53CA2 /* Ævintýri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ævintýri.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A8B88D319A212F400F53CA2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8A8B88D519A212F400F53CA2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		8A8B88D719A212F400F53CA2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -143,7 +143,7 @@
 		8A8B88D119A212F400F53CA2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8A8B88D019A212F400F53CA2 /* AdventureBooks.app */,
+				8A8B88D019A212F400F53CA2 /* Ævintýri.app */,
 				8A8B88EB19A212F400F53CA2 /* AdventureBooksTests.xctest */,
 			);
 			name = Products;
@@ -264,9 +264,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8A8B88CF19A212F400F53CA2 /* AdventureBooks */ = {
+		8A8B88CF19A212F400F53CA2 /* Ævintýri */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8A8B88FC19A212F400F53CA2 /* Build configuration list for PBXNativeTarget "AdventureBooks" */;
+			buildConfigurationList = 8A8B88FC19A212F400F53CA2 /* Build configuration list for PBXNativeTarget "Ævintýri" */;
 			buildPhases = (
 				8A8B88CC19A212F400F53CA2 /* Sources */,
 				8A8B88CE19A212F400F53CA2 /* Resources */,
@@ -276,9 +276,9 @@
 			);
 			dependencies = (
 			);
-			name = AdventureBooks;
+			name = "Ævintýri";
 			productName = AdventureBooks;
-			productReference = 8A8B88D019A212F400F53CA2 /* AdventureBooks.app */;
+			productReference = 8A8B88D019A212F400F53CA2 /* Ævintýri.app */;
 			productType = "com.apple.product-type.application";
 		};
 		8A8B88EA19A212F400F53CA2 /* AdventureBooksTests */ = {
@@ -335,7 +335,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8A8B88CF19A212F400F53CA2 /* AdventureBooks */,
+				8A8B88CF19A212F400F53CA2 /* Ævintýri */,
 				8A8B88EA19A212F400F53CA2 /* AdventureBooksTests */,
 			);
 		};
@@ -402,7 +402,7 @@
 /* Begin PBXTargetDependency section */
 		8A8B88F119A212F400F53CA2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8A8B88CF19A212F400F53CA2 /* AdventureBooks */;
+			target = 8A8B88CF19A212F400F53CA2 /* Ævintýri */;
 			targetProxy = 8A8B88F019A212F400F53CA2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -535,14 +535,14 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AdventureBooks/AdventureBooks-Prefix.pch";
 				INFOPLIST_FILE = "AdventureBooks/AdventureBooks-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.aevintyri;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Ævintýri";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -556,14 +556,14 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AdventureBooks/AdventureBooks-Prefix.pch";
 				INFOPLIST_FILE = "AdventureBooks/AdventureBooks-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.aevintyri;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Ævintýri";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -624,7 +624,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8A8B88FC19A212F400F53CA2 /* Build configuration list for PBXNativeTarget "AdventureBooks" */ = {
+		8A8B88FC19A212F400F53CA2 /* Build configuration list for PBXNativeTarget "Ævintýri" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8A8B88FD19A212F400F53CA2 /* Debug */,
