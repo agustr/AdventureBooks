@@ -169,7 +169,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="57" id="rx0-EN-qt5"/>
                                 </constraints>
-                                <string key="text">Einu sinni voru karl og kerling í koti sínu. Þau áttu einn son, en þótti ekkert vænt um hann. Ekki voru fleiri menn en þau þrjú í kotinu. Eina kú áttu þau karl og kerling; það voru allar skepnurnar. Kýrin hét Búkolla.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -254,60 +253,68 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MrI-hj-Fhn">
-                                <rect key="frame" x="251" y="20" width="51" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MrI-hj-Fhn">
+                                <rect key="frame" x="147" y="52" width="51" height="31"/>
                                 <connections>
                                     <action selector="settingsChangeAction:" destination="RgD-cb-hJN" eventType="valueChanged" id="BQu-Zs-8hL"/>
                                 </connections>
                             </switch>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Show Text" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdA-u6-MSW">
-                                <rect key="frame" x="27" y="25" width="216" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sýna texta" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdA-u6-MSW">
+                                <rect key="frame" x="20" y="57" width="117" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Automatically Turn Page" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R4t-XL-5N0">
-                                <rect key="frame" x="27" y="64" width="216" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fletta sjálfkrafa" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R4t-XL-5N0">
+                                <rect key="frame" x="20" y="96" width="117" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mgO-bG-fyC">
-                                <rect key="frame" x="251" y="59" width="51" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mgO-bG-fyC">
+                                <rect key="frame" x="147" y="91" width="51" height="31"/>
                                 <connections>
                                     <action selector="settingsChangeAction:" destination="RgD-cb-hJN" eventType="valueChanged" id="w1I-LZ-Hwu"/>
                                 </connections>
                             </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8uO-7U-f1y">
-                                <rect key="frame" x="251" y="98" width="51" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="settingsChangeAction:" destination="RgD-cb-hJN" eventType="valueChanged" id="NQk-Hx-GUp"/>
-                                </connections>
-                            </switch>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Play Audio" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gc7-RX-16G">
-                                <rect key="frame" x="27" y="103" width="216" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spila lestur" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gc7-RX-16G">
+                                <rect key="frame" x="20" y="135" width="117" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jue-Lj-CSJ">
-                                <rect key="frame" x="336" y="812" width="58" height="30"/>
-                                <state key="normal" title="Finished">
+                                <rect key="frame" x="361" y="812" width="33" height="30"/>
+                                <state key="normal" title="Loka">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="finishedButtonPress:" destination="RgD-cb-hJN" eventType="touchUpInside" id="5N3-pS-9IQ"/>
                                 </connections>
                             </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8uO-7U-f1y">
+                                <rect key="frame" x="147" y="130" width="51" height="31"/>
+                                <connections>
+                                    <action selector="settingsChangeAction:" destination="RgD-cb-hJN" eventType="valueChanged" id="NQk-Hx-GUp"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Gc7-RX-16G" firstAttribute="width" secondItem="hdA-u6-MSW" secondAttribute="width" id="0OQ-Fw-txJ"/>
                             <constraint firstItem="tjC-kH-xXO" firstAttribute="top" secondItem="jue-Lj-CSJ" secondAttribute="bottom" constant="20" id="1lf-7Z-ii4"/>
+                            <constraint firstItem="hdA-u6-MSW" firstAttribute="leading" secondItem="R5S-vX-e7q" secondAttribute="leading" constant="20" id="51e-u7-1ZB"/>
+                            <constraint firstItem="R4t-XL-5N0" firstAttribute="leading" secondItem="hdA-u6-MSW" secondAttribute="leading" id="5k8-bL-2wc"/>
                             <constraint firstAttribute="trailing" secondItem="jue-Lj-CSJ" secondAttribute="trailing" constant="20" id="5ms-X3-CAy"/>
+                            <constraint firstItem="8uO-7U-f1y" firstAttribute="centerY" secondItem="Gc7-RX-16G" secondAttribute="centerY" id="BTG-ow-bth"/>
+                            <constraint firstItem="R4t-XL-5N0" firstAttribute="width" secondItem="hdA-u6-MSW" secondAttribute="width" id="GJZ-xN-MnQ"/>
+                            <constraint firstItem="mgO-bG-fyC" firstAttribute="top" secondItem="MrI-hj-Fhn" secondAttribute="bottom" constant="8" symbolic="YES" id="M8a-Lp-4P8"/>
+                            <constraint firstItem="8uO-7U-f1y" firstAttribute="leading" secondItem="MrI-hj-Fhn" secondAttribute="leading" id="MHb-wh-jbx"/>
+                            <constraint firstItem="8uO-7U-f1y" firstAttribute="top" secondItem="mgO-bG-fyC" secondAttribute="bottom" constant="8" symbolic="YES" id="aPW-Vn-um1"/>
+                            <constraint firstItem="MrI-hj-Fhn" firstAttribute="centerY" secondItem="hdA-u6-MSW" secondAttribute="centerY" id="fhx-cg-NHX"/>
+                            <constraint firstItem="MrI-hj-Fhn" firstAttribute="top" secondItem="wIa-Z9-mtZ" secondAttribute="bottom" constant="8" symbolic="YES" id="hXI-LT-HPG"/>
+                            <constraint firstItem="mgO-bG-fyC" firstAttribute="leading" secondItem="MrI-hj-Fhn" secondAttribute="leading" id="k8s-vx-ARj"/>
+                            <constraint firstItem="Gc7-RX-16G" firstAttribute="leading" secondItem="hdA-u6-MSW" secondAttribute="leading" id="mnm-jy-S8W"/>
+                            <constraint firstItem="MrI-hj-Fhn" firstAttribute="leading" secondItem="hdA-u6-MSW" secondAttribute="trailing" constant="10" id="x8I-P4-EZS"/>
+                            <constraint firstItem="mgO-bG-fyC" firstAttribute="centerY" secondItem="R4t-XL-5N0" secondAttribute="centerY" id="zfJ-Lq-T1B"/>
                         </constraints>
                     </view>
                     <connections>
