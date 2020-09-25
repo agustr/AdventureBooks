@@ -78,6 +78,7 @@
 -(void)viewDidLayoutSubviews{
     //[self layoutPage];
     [self.view layoutSubviews];
+    [self layoutPage];
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
@@ -97,6 +98,7 @@
     [_playButton setOpaque:NO];
     [self getPageText];
 }
+
 - (IBAction)settingsButtonPress:(id)sender {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"iPhone" bundle:nil];
     UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"settingsViewController"];
@@ -154,9 +156,7 @@
     [self.view layoutSubviews];
     
     //make the textview height constraint as small as possible.
-    NSLog(@"self.pageTextVieHeight.constant: %f",self.pageTextVieHeight.constant);
     self.pageTextVieHeight.constant = [self contentSizeRectForTextView:self.pageTextView].size.height;
-    NSLog(@"self.pageTextVieHeight.constant: %f",self.pageTextVieHeight.constant);
 
     //find uiimage bottom line
     CGFloat imageDistanceFromBottom = [self imageDistanceFromBottom];
@@ -219,10 +219,6 @@
         [_settingsButton setHidden:NO];
         [_pageAudio stop];
         self.pageImageView.alpha = 0.5;
-        
-        
-        //set the interface to showing
-        //_isShowingInterface = YES;
     }
 }
 -(CGFloat)imageDistanceFromBottom{
@@ -243,9 +239,8 @@
     self.pageImageView.image = [[UIImage alloc] initWithContentsOfFile:self.myPage.imageURL.path];
 
     [self layoutTextView];
-    
+    [self.view setNeedsLayout];
 }
-
 -(void)doVolumeFadeOut {
     
     if (self.pageAudio.volume > 0.1) {
@@ -271,17 +266,6 @@
     CGFloat width =  (CGFloat)ceil(textBounds.size.width + textView.textContainerInset.left + textView.textContainerInset.right);
     CGFloat height = (CGFloat)ceil(textBounds.size.height + textView.textContainerInset.top + textView.textContainerInset.bottom);
     return CGRectMake(0, 0, width, height);
-}
-
--(void)viewDidDisappear:(BOOL)animated
-{
-
-    //[self doVolumeFadeOut];
-}
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @synthesize pageAudio = _pageAudio;
