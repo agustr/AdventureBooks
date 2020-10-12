@@ -76,7 +76,6 @@
 }
 
 -(void)viewDidLayoutSubviews{
-    //[self layoutPage];
     [self.view layoutSubviews];
     [self layoutPage];
 }

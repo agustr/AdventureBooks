@@ -168,7 +168,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    NSArray * names = [NSArray arrayWithObjects:@"Stories",@"Store", nil];
+    NSArray * names = [NSArray arrayWithObjects:@"Sögur",@"Verslun", nil];
     return [names objectAtIndex:section];
 }
 
