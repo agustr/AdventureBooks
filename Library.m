@@ -12,7 +12,6 @@
 @interface Library()
 
 @property (nonatomic,retain, readwrite) NSMutableArray *books;
-//@property (nonatomic,retain, readwrite) NSURL *libraryUrl;  //depricated
 @property (nonatomic,retain,readwrite) NSMutableArray *libraryUrls;  //all the floders where stories are stored
 
 @end

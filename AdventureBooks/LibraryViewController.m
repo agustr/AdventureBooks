@@ -16,7 +16,6 @@
 
 @interface LibraryViewController () <UITableViewDataSource,UITableViewDelegate>
 
-@property (strong, nonatomic) IBOutlet UIImageView *backgroundImage;
 @property (strong, nonatomic) IBOutlet UITableView *libraryList;
 @property (strong, nonatomic) Library *library;
 @property (strong, nonatomic) NSArray *products;
@@ -252,7 +251,6 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     // Do any additional setup after loading the view.
     [self.libraryList setDataSource:self];
     [self.libraryList setDelegate:self];
-    NSLog(@"the scale factor of the image is: %f",self.backgroundImage.image.scale);
     [self getProducts];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(refreshTableView)
