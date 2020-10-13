@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="jLa-Eb-cC7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="jLa-Eb-cC7">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -46,7 +46,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jf2-Oi-rD4">
-                                                    <rect key="frame" x="79" y="4" width="35.5" height="21.5"/>
+                                                    <rect key="frame" x="79" y="4" width="35" height="21.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -172,11 +172,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNU-mI-8Bb" userLabel="Home Button">
-                                <rect key="frame" x="20" y="44" width="50" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNU-mI-8Bb" userLabel="Home Button">
+                                <rect key="frame" x="348" y="60" width="50" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="Mcf-Um-tww"/>
                                     <constraint firstAttribute="height" constant="50" id="Tor-7e-Jr6"/>
+                                    <constraint firstAttribute="width" secondItem="tNU-mI-8Bb" secondAttribute="height" multiplier="1:1" id="llh-VI-jkA"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="home.png">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -185,8 +185,8 @@
                                     <action selector="homeButtonPress:" destination="xbV-3H-EdM" eventType="touchUpInside" id="zq3-qe-1qe"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZM-8T-sY1" userLabel="Settings Button">
-                                <rect key="frame" x="344" y="44" width="50" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZM-8T-sY1" userLabel="Settings Button">
+                                <rect key="frame" x="348" y="126" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="2Q3-vl-Ahw"/>
                                     <constraint firstAttribute="height" constant="50" id="PGv-QF-I1c"/>
@@ -202,16 +202,16 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="eZM-8T-sY1" firstAttribute="top" secondItem="tNU-mI-8Bb" secondAttribute="bottom" constant="16" id="4Mp-Zm-f9L"/>
                             <constraint firstAttribute="centerY" secondItem="lQV-g6-cqE" secondAttribute="centerY" id="61B-0o-dz7"/>
                             <constraint firstItem="hDH-z0-WWX" firstAttribute="trailing" secondItem="3bZ-I0-BG7" secondAttribute="trailing" id="GNA-cH-7dx"/>
-                            <constraint firstItem="tNU-mI-8Bb" firstAttribute="leading" secondItem="pge-38-m0s" secondAttribute="leading" constant="20" id="Iby-VB-opL"/>
-                            <constraint firstItem="tNU-mI-8Bb" firstAttribute="top" secondItem="niV-hh-UWX" secondAttribute="bottom" id="JSW-af-tzj"/>
-                            <constraint firstItem="eZM-8T-sY1" firstAttribute="top" secondItem="niV-hh-UWX" secondAttribute="bottom" id="QDC-am-zHX"/>
+                            <constraint firstAttribute="trailing" secondItem="tNU-mI-8Bb" secondAttribute="trailing" constant="16" id="Kjb-Ds-riO"/>
                             <constraint firstItem="hDH-z0-WWX" firstAttribute="leading" secondItem="pge-38-m0s" secondAttribute="leading" id="VJs-M5-s9O"/>
                             <constraint firstItem="3bZ-I0-BG7" firstAttribute="top" secondItem="pge-38-m0s" secondAttribute="top" id="WPi-BE-W1k"/>
-                            <constraint firstAttribute="trailing" secondItem="eZM-8T-sY1" secondAttribute="trailing" constant="20" id="h82-bt-A7Z"/>
+                            <constraint firstItem="eZM-8T-sY1" firstAttribute="centerX" secondItem="tNU-mI-8Bb" secondAttribute="centerX" id="hTb-5p-DHH"/>
                             <constraint firstAttribute="bottom" secondItem="hDH-z0-WWX" secondAttribute="bottom" constant="10" id="n77-Al-6rM"/>
                             <constraint firstItem="8IZ-bn-CBp" firstAttribute="top" secondItem="3bZ-I0-BG7" secondAttribute="bottom" id="o9r-l9-siy"/>
+                            <constraint firstItem="tNU-mI-8Bb" firstAttribute="top" secondItem="niV-hh-UWX" secondAttribute="bottom" constant="16" id="qPM-Pz-Q83"/>
                             <constraint firstAttribute="trailing" secondItem="hDH-z0-WWX" secondAttribute="trailing" id="uXc-Mx-R2h"/>
                             <constraint firstItem="3bZ-I0-BG7" firstAttribute="leading" secondItem="hDH-z0-WWX" secondAttribute="leading" id="xYs-84-Bgc"/>
                             <constraint firstAttribute="centerX" secondItem="lQV-g6-cqE" secondAttribute="centerX" id="xkl-kt-sii"/>
@@ -281,7 +281,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jue-Lj-CSJ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jue-Lj-CSJ">
                                 <rect key="frame" x="361" y="812" width="33" height="30"/>
                                 <state key="normal" title="Loka">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
