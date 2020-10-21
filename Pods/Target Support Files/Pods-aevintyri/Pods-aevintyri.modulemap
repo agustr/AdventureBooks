@@ -1,0 +1,6 @@
+framework module Pods_aevintyri {
+  umbrella header "Pods-aevintyri-umbrella.h"
+
+  export *
+  module * { export * }
+}

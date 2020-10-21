@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8A8B88CF19A212F400F53CA2"
-               BuildableName = "&#xc6;vinty&#x301;ri.app"
-               BlueprintName = "aevintyri"
-               ReferencedContainer = "container:AdventureBooks.xcodeproj">
+               BlueprintIdentifier = "06F5CDD6235E25837519792853B145A1"
+               BuildableName = "PureLayout.framework"
+               BlueprintName = "PureLayout"
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -40,16 +40,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8A8B88CF19A212F400F53CA2"
-            BuildableName = "&#xc6;vinty&#x301;ri.app"
-            BlueprintName = "aevintyri"
-            ReferencedContainer = "container:AdventureBooks.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -57,16 +47,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8A8B88CF19A212F400F53CA2"
-            BuildableName = "&#xc6;vinty&#x301;ri.app"
-            BlueprintName = "aevintyri"
-            ReferencedContainer = "container:AdventureBooks.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

@@ -2,8 +2,9 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="jLa-Eb-cC7">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
+        <deployment version="2304" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -149,10 +150,13 @@
                         <viewControllerLayoutGuide type="top" id="niV-hh-UWX"/>
                         <viewControllerLayoutGuide type="bottom" id="8IZ-bn-CBp"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="pge-38-m0s">
+                    <view key="view" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pge-38-m0s">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="17o-y4-9nd" customClass="BookPageView" customModule="Ævintýri" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play-button-vector.png" translatesAutoresizingMaskIntoConstraints="NO" id="lQV-g6-cqE" userLabel="Image View Play Button">
                                 <rect key="frame" x="107" y="348" width="200" height="200"/>
                                 <constraints>
@@ -160,18 +164,6 @@
                                     <constraint firstAttribute="width" constant="200" id="hyv-wa-QV4"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3bZ-I0-BG7">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
-                            </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDH-z0-WWX">
-                                <rect key="frame" x="0.0" y="829" width="414" height="57"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="57" id="rx0-EN-qt5"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNU-mI-8Bb" userLabel="Home Button">
                                 <rect key="frame" x="348" y="60" width="50" height="50"/>
                                 <constraints>
@@ -204,16 +196,13 @@
                         <constraints>
                             <constraint firstItem="eZM-8T-sY1" firstAttribute="top" secondItem="tNU-mI-8Bb" secondAttribute="bottom" constant="16" id="4Mp-Zm-f9L"/>
                             <constraint firstAttribute="centerY" secondItem="lQV-g6-cqE" secondAttribute="centerY" id="61B-0o-dz7"/>
-                            <constraint firstItem="hDH-z0-WWX" firstAttribute="trailing" secondItem="3bZ-I0-BG7" secondAttribute="trailing" id="GNA-cH-7dx"/>
+                            <constraint firstItem="17o-y4-9nd" firstAttribute="leading" secondItem="pge-38-m0s" secondAttribute="leading" id="FBm-kj-8sH"/>
                             <constraint firstAttribute="trailing" secondItem="tNU-mI-8Bb" secondAttribute="trailing" constant="16" id="Kjb-Ds-riO"/>
-                            <constraint firstItem="hDH-z0-WWX" firstAttribute="leading" secondItem="pge-38-m0s" secondAttribute="leading" id="VJs-M5-s9O"/>
-                            <constraint firstItem="3bZ-I0-BG7" firstAttribute="top" secondItem="pge-38-m0s" secondAttribute="top" id="WPi-BE-W1k"/>
+                            <constraint firstItem="8IZ-bn-CBp" firstAttribute="top" secondItem="17o-y4-9nd" secondAttribute="bottom" id="MC1-wU-KLj"/>
+                            <constraint firstAttribute="trailing" secondItem="17o-y4-9nd" secondAttribute="trailing" id="Mwe-EX-7Ku"/>
+                            <constraint firstItem="17o-y4-9nd" firstAttribute="top" secondItem="niV-hh-UWX" secondAttribute="bottom" id="gbH-qK-cup"/>
                             <constraint firstItem="eZM-8T-sY1" firstAttribute="centerX" secondItem="tNU-mI-8Bb" secondAttribute="centerX" id="hTb-5p-DHH"/>
-                            <constraint firstAttribute="bottom" secondItem="hDH-z0-WWX" secondAttribute="bottom" constant="10" id="n77-Al-6rM"/>
-                            <constraint firstItem="8IZ-bn-CBp" firstAttribute="top" secondItem="3bZ-I0-BG7" secondAttribute="bottom" id="o9r-l9-siy"/>
                             <constraint firstItem="tNU-mI-8Bb" firstAttribute="top" secondItem="niV-hh-UWX" secondAttribute="bottom" constant="16" id="qPM-Pz-Q83"/>
-                            <constraint firstAttribute="trailing" secondItem="hDH-z0-WWX" secondAttribute="trailing" id="uXc-Mx-R2h"/>
-                            <constraint firstItem="3bZ-I0-BG7" firstAttribute="leading" secondItem="hDH-z0-WWX" secondAttribute="leading" id="xYs-84-Bgc"/>
                             <constraint firstAttribute="centerX" secondItem="lQV-g6-cqE" secondAttribute="centerX" id="xkl-kt-sii"/>
                         </constraints>
                         <connections>
@@ -221,12 +210,8 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="bookPageView" destination="17o-y4-9nd" id="2BE-oq-oF0"/>
                         <outlet property="homeButton" destination="tNU-mI-8Bb" id="IrN-d8-ZHi"/>
-                        <outlet property="pageImageView" destination="3bZ-I0-BG7" id="aP9-X6-vN4"/>
-                        <outlet property="pageImageViewDistanceFromBottom" destination="o9r-l9-siy" id="odA-Xh-rn2"/>
-                        <outlet property="pageTextVieHeight" destination="rx0-EN-qt5" id="3NF-QM-jSE"/>
-                        <outlet property="pageTextView" destination="hDH-z0-WWX" id="gDu-yK-UmT"/>
-                        <outlet property="pageTextViewDistanceFromBottom" destination="n77-Al-6rM" id="E1l-4G-l6X"/>
                         <outlet property="playButton" destination="lQV-g6-cqE" id="SuE-ce-kjo"/>
                         <outlet property="playButtonImage" destination="lQV-g6-cqE" id="W6S-n8-wOa"/>
                         <outlet property="settingsButton" destination="eZM-8T-sY1" id="6R4-fk-O8S"/>
@@ -334,5 +319,8 @@
         <image name="home.png" width="512" height="512"/>
         <image name="play-button-vector.png" width="512" height="512"/>
         <image name="settings.png" width="512" height="512"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
