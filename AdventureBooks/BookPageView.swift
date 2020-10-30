@@ -70,7 +70,6 @@ class BookPageView: UIView {
         textView.isScrollEnabled = false
         textView.isUserInteractionEnabled = false
         stackView.addArrangedSubview(textView)
-        
     }
     
     override init(frame: CGRect) {
@@ -101,6 +100,10 @@ class BookPageView: UIView {
             stackView.autoPinEdge(toSuperviewEdge: .trailing)
             
             shouldSetupConstraints = false
+        }
+        
+        if textView.text.count == 0 {
+            textView.isHidden = true
         }
         
         self.adjustImageSize()

@@ -14,8 +14,8 @@
             filePath = "AdventureBooks/BookPageView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "updateConstraints()"
             landmarkType = "7">
          </BreakpointContent>
@@ -23,16 +23,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B540E33C-5FA4-4BD4-BD5F-225E2782B948"
+            uuid = "470651D0-4FBD-45C4-86F5-8B5758F281A1"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AdventureBooks/BookPageView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
-            landmarkName = "allowedImageSize(image:)"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "updateConstraints()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
