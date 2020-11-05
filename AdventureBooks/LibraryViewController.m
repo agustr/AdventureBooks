@@ -1,43 +1,18 @@
-//
-//  LibraryViewController.m
-//  AdventureBooks
-//
-//  Created by Agust Rafnsson on 18/08/14.
-//  Copyright (c) 2014 Agust Rafnsson. All rights reserved.
-//
-
 #import "LibraryViewController.h"
 #import "Library.h"
 #import "BookViewController.h"
 #import <StoreKit/StoreKit.h>
-#import "StoryIAPHelper.h"
-#import "StoreTableViewCell.h"
+
 
 
 @interface LibraryViewController () <UITableViewDataSource,UITableViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *libraryList;
 @property (strong, nonatomic) Library *library;
-@property (strong, nonatomic) NSArray *products;
 
 @end
 
 @implementation LibraryViewController
-
-- (void)tableView:(UITableView *)tableView
-didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    //a row has been selected.
-    if (indexPath.section == 0) {
-        //This is a local story that has been selected and is dealt with in a segue
-    }
-    else{
-        //Subject has chosen to buy a story.
-        [[StoryIAPHelper sharedInstance] buyProduct: [self.products objectAtIndex:indexPath.row]];
-    }
-}
-- (IBAction)restoreButton:(id)sender {
-    [[StoryIAPHelper sharedInstance] restoreCompletedTransactions];
-}
 
 // Override to support conditional editing of the table view.
 // This only needs to be implemented if you are going to be returning NO
@@ -49,16 +24,21 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     return NO;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    //a row has been selected.
+    if (indexPath.section == 0) {
+        //This is a local story that has been selected and is dealt with in a segue
+    }
+}
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        NSLog(@"you have chosen to delete story %@", indexPath);
         [self.library deleteBook:[self.library.books objectAtIndex:indexPath.row]];
     }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
     
     if (indexPath.section==0) {
         UITableViewCell *bookCell = [self.libraryList dequeueReusableCellWithIdentifier:@"bookCell"];
@@ -76,58 +56,6 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
         bookCell.imageView.layer.borderWidth = 1;
         return bookCell;
     }
-    if (indexPath.section==1) {
-        
-        //get a cell
-        StoreTableViewCell *storeCell = [self.libraryList dequeueReusableCellWithIdentifier:@"StoreBookCell"];
-        
-        //get current product
-        SKProduct* currentProduct = [self.products objectAtIndex:indexPath.row];
-        
-        //post product name
-        storeCell.textLabel.text = currentProduct.localizedTitle;
-        
-        //get price
-        NSNumberFormatter *priceFormatter = [[NSNumberFormatter alloc] init];
-        [priceFormatter setFormatterBehavior:NSNumberFormatterBehavior10_4];
-        [priceFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
-        [priceFormatter setLocale:currentProduct.priceLocale];
-        storeCell.detailTextLabel.text = [priceFormatter stringFromNumber:currentProduct.price];
-        
-        [storeCell listenForDownloadOf:currentProduct.productIdentifier];
-        
-        
-        //get the icon for the story
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            if ([self getProductsIcon:currentProduct]) {
-                //NSLog(@"we have an image");
-                UIImage *icon = [self getProductsIcon:currentProduct];
-                if (icon) {
-                    
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        if (storeCell.tag == indexPath.row) {
-                            [storeCell.imageView setImage:icon];
-                            [storeCell setNeedsLayout];
-                        }
-                    });
-                }
-            }
-        });
-        
-        BOOL bought = [[StoryIAPHelper sharedInstance] productPurchased:currentProduct.productIdentifier];
-        
-        if (bought) {
-            storeCell.textLabel.textColor = [UIColor greenColor];
-            storeCell.detailTextLabel.text = @"press to restore";
-        }
-        
-        storeCell.tag = indexPath.row;
-        //storeCell.imageView.frame = imageFrame;
-        storeCell.imageView.layer.cornerRadius = 10;
-        storeCell.imageView.layer.borderWidth = 1;
-        //[storeCell showProgress:YES];
-        return storeCell;
-    }
     return nil;
 }
 
@@ -143,26 +71,20 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     if ([myFM fileExistsAtPath:myProductIcon.path]) {
         //the icon exists locally. no need to check outside. return local image.
-        NSLog(@"The icon exists locally at the path:%@\n\n\n\n\n\n",myProductIcon.path);
         myImage = [[UIImage alloc] initWithContentsOfFile:myProductIcon.path];
     }
     else{
         //check online for image
-        NSLog(@"Try to fetch from web...");
         NSData *myData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@/icon.jpg",BASEWEBURL,myProduct.productIdentifier]]];
         if (myData) {
             NSURL *myProductDir = myProductIcon;
             [myFM createDirectoryAtURL:[myProductDir URLByDeletingLastPathComponent] withIntermediateDirectories:YES attributes:nil error:nil];
-           
+            
             [myFM createFileAtPath:myProductIcon.path contents:myData attributes:nil];
             //[myData writeToFile:myProductIcon.path atomically:YES];
         }
-        else{
-            NSLog(@"NO File Found ONline");
-        }
         myImage = [[UIImage alloc] initWithData:myData];
     }
-    NSLog(@"STOP checking for icon %@",myProduct.localizedTitle);
     return myImage;
 }
 
@@ -172,14 +94,8 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    NSLog(@"the number of cells in the tableview is: %tu", self.library.books.count);
-    if (section==0) {
-        NSLog(@"section zero set");
+    if (section == 0) {
         return self.library.books.count;
-    }
-    if (section==1) {
-        NSLog(@"section one set");
-        return self.products.count;
     }
     else{
         return 0;
@@ -187,46 +103,30 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    if (self.products.count) {
-        NSLog(@"two sections");
-        return 2;
-    }
-    else{
-        NSLog(@"One section");
-        return 1;
+    return 1;
+}
+
+- (IBAction)dictateModeButtonPressed:(id)sender {
+    if ([sender isKindOfClass:[UIButton class]]){
+        UIButton* senderButton = (UIButton*) sender;
+        senderButton.selected = !senderButton.selected;
+        if (senderButton.selected) {
+            [senderButton setImage:[[UIImage imageNamed: @"mic.fill"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState: UIControlStateSelected];
+            [senderButton.imageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+            senderButton.tintColor = UIColor.redColor;
+        } else {
+            senderButton.tintColor = UIColor.blackColor;
+        }
     }
 }
 
 - (IBAction)settingButtonPressed:(id)sender {
-    NSLog(@"settings button pressed");
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"iPhone" bundle:nil];
     UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"settingsViewController"];
     //vc.view.backgroundColor = [UIColor clearColor];
     self.modalPresentationStyle = UIModalPresentationCurrentContext;
     self.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     [self presentViewController:vc animated:YES completion:Nil];
-}
-
--(void) getProducts {
-    [[StoryIAPHelper sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
-        if (success) {
-            self.products = products;
-            NSLog(@"the number of products found were : %lu", (unsigned long)self.products.count);
-            [self createStoreLibrary];
-            dispatch_async(dispatch_get_main_queue(), ^(void){
-                [self.libraryList reloadData];
-            });
-        }
-    }];
-}
-
--(void)createStoreLibrary{
-    for (SKProduct *product in self.products) {
-        NSLog(@"Found product: %@ %@ %0.2f",
-              product.productIdentifier,
-              product.localizedTitle,
-              product.price.floatValue);
-    }
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -241,9 +141,8 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     NSURL *bundeledStoriesURL = [[NSBundle mainBundle] URLForResource:@"BundeledStories" withExtension:nil];
-    NSLog(@"this is the url for 'stories':%@", bundeledStoriesURL);
     
     self.library = [[Library alloc] initWithLibraryFolderUrl:bundeledStoriesURL];
     [self.library addLibraryUrl:[[[[NSFileManager defaultManager] URLsForDirectory:NSLibraryDirectory inDomains:NSUserDomainMask]objectAtIndex:0 ] URLByAppendingPathComponent:@"stories"]];
@@ -251,7 +150,6 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     // Do any additional setup after loading the view.
     [self.libraryList setDataSource:self];
     [self.libraryList setDelegate:self];
-    [self getProducts];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(refreshTableView)
                                                  name:@"LibraryChanged"
@@ -259,16 +157,8 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 }
 
 -(void)refreshTableView{
-    NSLog(@"Refresh table view function is called.");
     [self.libraryList reloadData];
 }
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 #pragma mark - Navigation
 
@@ -279,19 +169,13 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     // Pass the selected object to the new view controller.
     if ([sender isKindOfClass:[UITableViewCell class]]) {
         UITableViewCell *cell = (UITableViewCell*) sender;
-        NSLog(@"the tag of the sender is %ld", (long)cell.tag);
         
         BookViewController *destination = segue.destinationViewController;
         
         Book* selectedBook = [self.library.books objectAtIndex:cell.tag];
         
         destination.book = selectedBook;
-        
-        NSLog(@"its a tableviewclass sending the segue");
     }
-    NSLog(@"Segueing!");
-    
-    
 }
 
 @end
