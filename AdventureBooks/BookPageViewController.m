@@ -146,7 +146,6 @@
 {
     //NSLog(@"returning audioplayer");
     if (!_pageAudio) {
-        NSLog(@"creating audioplayer");
         _pageAudio = [[AVAudioPlayer alloc] initWithContentsOfURL:self.myPage.audioURL error:nil];
         [_pageAudio setDelegate:self];
     }

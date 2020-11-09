@@ -67,7 +67,7 @@
                                                     <color key="tintColor" systemColor="systemRedColor"/>
                                                 </imageView>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="43" placeholderIntrinsicHeight="43" image="AppIcon76x76.png" translatesAutoresizingMaskIntoConstraints="NO" id="I4i-fM-hiO">
-                                                    <rect key="frame" x="16" y="0.0" width="44" height="44"/>
+                                                    <rect key="frame" x="16" y="0.0" width="44.333333333333314" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -141,7 +141,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="ci9-F3-F33"/>
                     <connections>
-                        <outlet property="libraryList" destination="Cst-PW-nBl" id="2zK-Vi-Dx5"/>
+                        <outlet property="dictateButton" destination="eUu-C9-Xi5" id="amz-L1-vNj"/>
+                        <outlet property="libraryListView" destination="Cst-PW-nBl" id="2zK-Vi-Dx5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RNW-nG-RIi" userLabel="First Responder" sceneMemberID="firstResponder"/>

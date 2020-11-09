@@ -7,10 +7,17 @@
 
 @interface LibraryViewController () <UITableViewDataSource,UITableViewDelegate>
 
-@property (strong, nonatomic) IBOutlet UITableView *libraryList;
-@property (strong, nonatomic) Library *library;
+@property (strong, nonatomic) Library *bundledLibrary;
+@property (strong, nonatomic) Library *userLibrary;
+@property (strong, nonatomic) NSArray *libraries;
+@property (strong, nonatomic) IBOutlet UITableView *libraryListView;
+@property (weak, nonatomic) IBOutlet UIButton *dictateButton;
 
 @end
+
+#define BASEWEBURL @"http://www.aevintyri.com/products/"
+#define LOCALPRODUCTSFOLDER @"products/"
+#define USERSSTORIES @"userstories/"
 
 @implementation LibraryViewController
 
@@ -34,15 +41,14 @@
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [self.library deleteBook:[self.library.books objectAtIndex:indexPath.row]];
+        [self.bundledLibrary deleteBook:[self.bundledLibrary.books objectAtIndex:indexPath.row]];
     }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
     if (indexPath.section==0) {
-        UITableViewCell *bookCell = [self.libraryList dequeueReusableCellWithIdentifier:@"bookCell"];
-        Book *currentbook = [self.library.books objectAtIndex:indexPath.row];
+        UITableViewCell *bookCell = [self.libraryListView dequeueReusableCellWithIdentifier:@"bookCell"];
+        Book *currentbook = [self.bundledLibrary.books objectAtIndex:indexPath.row];
         bookCell.textLabel.text = currentbook.title;
         bookCell.detailTextLabel.text = currentbook.author;
         bookCell.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:currentbook.icon]];
@@ -59,43 +65,39 @@
     return nil;
 }
 
-#define BASEWEBURL @"http://www.aevintyri.com/products/"
-#define LOCALPRODUCTSFOLDER @"products/"
-
--(UIImage* )getProductsIcon:(SKProduct*) myProduct{
-    
-    NSFileManager *myFM = [[NSFileManager alloc]init];
-    NSURL *myLibraryDir = [[myFM URLsForDirectory:NSLibraryDirectory inDomains:NSUserDomainMask]objectAtIndex:0 ];
-    NSURL *myProductIcon = [[myLibraryDir URLByAppendingPathComponent:LOCALPRODUCTSFOLDER] URLByAppendingPathComponent:[NSString stringWithFormat:@"%@/icon.jpg",myProduct.productIdentifier]];
-    UIImage * myImage;
-    
-    if ([myFM fileExistsAtPath:myProductIcon.path]) {
-        //the icon exists locally. no need to check outside. return local image.
-        myImage = [[UIImage alloc] initWithContentsOfFile:myProductIcon.path];
-    }
-    else{
-        //check online for image
-        NSData *myData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@/icon.jpg",BASEWEBURL,myProduct.productIdentifier]]];
-        if (myData) {
-            NSURL *myProductDir = myProductIcon;
-            [myFM createDirectoryAtURL:[myProductDir URLByDeletingLastPathComponent] withIntermediateDirectories:YES attributes:nil error:nil];
-            
-            [myFM createFileAtPath:myProductIcon.path contents:myData attributes:nil];
-            //[myData writeToFile:myProductIcon.path atomically:YES];
-        }
-        myImage = [[UIImage alloc] initWithData:myData];
-    }
-    return myImage;
-}
+//-(UIImage* )getProductsIcon:(SKProduct*) myProduct{
+//
+//    NSFileManager *myFM = [[NSFileManager alloc]init];
+//    NSURL *myLibraryDir = [[myFM URLsForDirectory:NSLibraryDirectory inDomains:NSUserDomainMask]objectAtIndex:0 ];
+//    NSURL *myProductIcon = [[myLibraryDir URLByAppendingPathComponent:LOCALPRODUCTSFOLDER] URLByAppendingPathComponent:[NSString stringWithFormat:@"%@/icon.jpg", myProduct.productIdentifier]];
+//    UIImage * myImage;
+//
+//    if ([myFM fileExistsAtPath:myProductIcon.path]) {
+//        //the icon exists locally. no need to check outside. return local image.
+//        myImage = [[UIImage alloc] initWithContentsOfFile:myProductIcon.path];
+//    }
+//    else{
+//        //check online for image
+//        NSData *myData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@/icon.jpg",BASEWEBURL,myProduct.productIdentifier]]];
+//        if (myData) {
+//            NSURL *myProductDir = myProductIcon;
+//            [myFM createDirectoryAtURL:[myProductDir URLByDeletingLastPathComponent] withIntermediateDirectories:YES attributes:nil error:nil];
+//
+//            [myFM createFileAtPath:myProductIcon.path contents:myData attributes:nil];
+//        }
+//        myImage = [[UIImage alloc] initWithData:myData];
+//    }
+//    return myImage;
+//}
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    NSArray * names = [NSArray arrayWithObjects:@"Sögur",@"Verslun", nil];
+    NSArray * names = [NSArray arrayWithObjects: @"Sögur", @"Mína Sögur", nil];
     return [names objectAtIndex:section];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (section == 0) {
-        return self.library.books.count;
+        return self.bundledLibrary.books.count;
     }
     else{
         return 0;
@@ -107,16 +109,11 @@
 }
 
 - (IBAction)dictateModeButtonPressed:(id)sender {
-    if ([sender isKindOfClass:[UIButton class]]){
-        UIButton* senderButton = (UIButton*) sender;
-        senderButton.selected = !senderButton.selected;
-        if (senderButton.selected) {
-            [senderButton setImage:[[UIImage imageNamed: @"mic.fill"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState: UIControlStateSelected];
-            [senderButton.imageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-            senderButton.tintColor = UIColor.redColor;
-        } else {
-            senderButton.tintColor = UIColor.blackColor;
-        }
+    self.dictateButton.selected = !self.dictateButton.selected;
+    if (self.dictateButton.selected) {
+//        self.dictateButton.tintColor = UIColor.redColor;
+    } else {
+//        self.dictateButton.tintColor = UIColor.blackColor;
     }
 }
 
@@ -142,14 +139,24 @@
 {
     [super viewDidLoad];
     
+    [self.dictateButton setImage:[UIImage imageNamed:@"mic"] forState:UIControlStateNormal];
+    [self.dictateButton setImage:[[UIImage imageNamed:@"mic.fill"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateSelected];
+    [self.dictateButton setTintColor: UIColor.redColor];
+    
     NSURL *bundeledStoriesURL = [[NSBundle mainBundle] URLForResource:@"BundeledStories" withExtension:nil];
+//    self.bundledLibrary = [[Library alloc] initWithLibraryFolderUrl:bundeledStoriesURL];
+    self.bundledLibrary = [[Library alloc] initWithLibraryFolderUrl:bundeledStoriesURL andName:@"Ævintýri"];
+    [self.bundledLibrary addLibraryUrl:[[[[NSFileManager defaultManager] URLsForDirectory:NSLibraryDirectory inDomains:NSUserDomainMask]objectAtIndex:0 ] URLByAppendingPathComponent:@"stories"]];
     
-    self.library = [[Library alloc] initWithLibraryFolderUrl:bundeledStoriesURL];
-    [self.library addLibraryUrl:[[[[NSFileManager defaultManager] URLsForDirectory:NSLibraryDirectory inDomains:NSUserDomainMask]objectAtIndex:0 ] URLByAppendingPathComponent:@"stories"]];
     
-    // Do any additional setup after loading the view.
-    [self.libraryList setDataSource:self];
-    [self.libraryList setDelegate:self];
+    NSArray *userStoriesURL = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSLog(@"Searchpaths for documents in domain: \n %@", userStoriesURL);
+//    self.bundledLibrary = [[Library alloc] initWithLibraryFolderUrl:bundeledStoriesURL];
+    self.bundledLibrary = [[Library alloc] initWithLibraryFolderUrl:bundeledStoriesURL andName:@"Mínar Sögur"];
+    [self.bundledLibrary addLibraryUrl:[[[[NSFileManager defaultManager] URLsForDirectory:NSLibraryDirectory inDomains:NSUserDomainMask]objectAtIndex:0 ] URLByAppendingPathComponent:@"stories"]];
+    
+    [self.libraryListView setDataSource:self];
+    [self.libraryListView setDelegate:self];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(refreshTableView)
                                                  name:@"LibraryChanged"
@@ -157,7 +164,7 @@
 }
 
 -(void)refreshTableView{
-    [self.libraryList reloadData];
+    [self.libraryListView reloadData];
 }
 
 #pragma mark - Navigation
@@ -172,7 +179,7 @@
         
         BookViewController *destination = segue.destinationViewController;
         
-        Book* selectedBook = [self.library.books objectAtIndex:cell.tag];
+        Book* selectedBook = [self.bundledLibrary.books objectAtIndex:cell.tag];
         
         destination.book = selectedBook;
     }

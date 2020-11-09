@@ -56,11 +56,9 @@
 (UIPageViewController *)pageViewController viewControllerBeforeViewController:
 (UIViewController *)viewController
 {
-    NSLog(@"before viewcontroller");
     NSUInteger index = [self indexOfViewController:
                         (BookPageViewController *)viewController];
     if ((index == 0) || (index == NSNotFound)) {
-        NSLog(@"returns no controller.");
         return nil;
     }
     
@@ -70,11 +68,9 @@
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
 {
-    NSLog(@"- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController");
     NSUInteger index = [self indexOfViewController:
                         (BookPageViewController *)viewController];
     if (index == NSNotFound) {
-        NSLog(@"returns no controller.");
         return nil;
     }
     
@@ -107,7 +103,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
    // NSLog(@"the path is: %@", self.book.bookUrl.path);
-    NSLog(@"self is datasource");
     self.dataSource = self;
     
     UIStoryboard *storyboard =[UIStoryboard storyboardWithName:@"iPhone"
@@ -115,9 +110,7 @@
     
     BookPageViewController *dataViewController =[storyboard instantiateViewControllerWithIdentifier:@"pageView2"];
     
-    NSLog(@"how many pages in the book: %lu",(unsigned long)[self.book.pages count]);
     Page* firsPage = [self.book.pages objectAtIndex:0];
-    NSLog(@"the first pages image url is: %@", firsPage.imageURL.path);
     dataViewController.myPage = self.book.pages[0];
     
     NSMutableArray* viewControllers = [[NSMutableArray alloc]init];

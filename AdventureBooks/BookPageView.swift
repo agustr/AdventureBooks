@@ -23,7 +23,7 @@ class BookPageView: UIView {
     @objc var text: String? {
         set {
             self.textView.text = newValue
-            self.setNeedsUpdateConstraints()
+            setNeedsUpdateConstraints()
         }
         get{
             return self.textView.text
@@ -33,7 +33,7 @@ class BookPageView: UIView {
     @objc var image: UIImage? {
         set {
             self.imageView.image = newValue
-            self.setNeedsUpdateConstraints()
+            setNeedsUpdateConstraints()
         }
         get {
             return self.imageView.image

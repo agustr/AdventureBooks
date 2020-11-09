@@ -52,13 +52,11 @@
 }
 - (IBAction)settingsChangeAction:(id)sender {
     UISwitch* actionSwitch = (UISwitch*)sender;
-    NSLog(@"ActionSwitch state: %d", actionSwitch.on);
     
     [[NSUserDefaults standardUserDefaults] setBool:_showTextSwitch.on forKey:@"showText"];
     
     if (!_playAudioSwitch.on) {
         //if you are not playing the audio then you have to turn the pages yourself
-        NSLog(@"audio is off and so should page turning be");
         [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"playAudio"];
         [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"autoPageTurning"];
     }
@@ -69,7 +67,6 @@
     
     if (sender==_autoPageTurningSwitch) {
         
-        NSLog(@"The user interacted with auto page turning switch");
         if (_autoPageTurningSwitch.on) {
             //if the user turns auto page turning on then turn the audio on
             [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"playAudio"];
