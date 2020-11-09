@@ -9,7 +9,7 @@
 
 @property (strong, nonatomic) Library *bundledLibrary;
 @property (strong, nonatomic) Library *userLibrary;
-@property (strong, nonatomic) NSArray *libraries;
+@property (strong, nonatomic) NSMutableArray *libraries;
 @property (strong, nonatomic) IBOutlet UITableView *libraryListView;
 @property (weak, nonatomic) IBOutlet UIButton *dictateButton;
 
@@ -20,6 +20,14 @@
 #define USERSSTORIES @"userstories/"
 
 @implementation LibraryViewController
+
+- (NSMutableArray*)libraries
+{
+    if (!_libraries) {
+        _libraries = [[NSMutableArray alloc] init];
+    }
+    return _libraries;
+}
 
 // Override to support conditional editing of the table view.
 // This only needs to be implemented if you are going to be returning NO
@@ -32,10 +40,16 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    //a row has been selected.
-    if (indexPath.section == 0) {
-        //This is a local story that has been selected and is dealt with in a segue
-    }
+    Book *book = [self bookAtIndexPath:indexPath];
+    BookViewController *bookVC = [[BookViewController alloc] init];
+    bookVC.book = book;
+    [self.navigationController pushViewController:bookVC animated:YES];
+}
+
+- (Book *) bookAtIndexPath: (NSIndexPath *) indexPath {
+    Library *selectedLibrary = [self.libraries objectAtIndex:indexPath.section];
+    Book *selectedBook = [selectedLibrary.books objectAtIndex:indexPath.item];
+    return selectedBook;
 }
 
 // Override to support editing the table view.
@@ -45,14 +59,14 @@
     }
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section==0) {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    Library *lib = self.libraries[indexPath.section];
+    Book *book = lib.books[indexPath.row];
+    if (book) {
         UITableViewCell *bookCell = [self.libraryListView dequeueReusableCellWithIdentifier:@"bookCell"];
-        Book *currentbook = [self.bundledLibrary.books objectAtIndex:indexPath.row];
-        bookCell.textLabel.text = currentbook.title;
-        bookCell.detailTextLabel.text = currentbook.author;
-        bookCell.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:currentbook.icon]];
-        //bookCell.imageView.contentMode = UIViewContentModeCenter ;
+        bookCell.textLabel.text = book.title;
+        bookCell.detailTextLabel.text = book.author;
+        bookCell.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:book.icon]];
         CGRect imageFrame = bookCell.imageView.frame;
         imageFrame.size.height = bookCell.frame.size.height -2;
         imageFrame.size.width = bookCell.frame.size.height -2;
@@ -65,47 +79,20 @@
     return nil;
 }
 
-//-(UIImage* )getProductsIcon:(SKProduct*) myProduct{
-//
-//    NSFileManager *myFM = [[NSFileManager alloc]init];
-//    NSURL *myLibraryDir = [[myFM URLsForDirectory:NSLibraryDirectory inDomains:NSUserDomainMask]objectAtIndex:0 ];
-//    NSURL *myProductIcon = [[myLibraryDir URLByAppendingPathComponent:LOCALPRODUCTSFOLDER] URLByAppendingPathComponent:[NSString stringWithFormat:@"%@/icon.jpg", myProduct.productIdentifier]];
-//    UIImage * myImage;
-//
-//    if ([myFM fileExistsAtPath:myProductIcon.path]) {
-//        //the icon exists locally. no need to check outside. return local image.
-//        myImage = [[UIImage alloc] initWithContentsOfFile:myProductIcon.path];
-//    }
-//    else{
-//        //check online for image
-//        NSData *myData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@/icon.jpg",BASEWEBURL,myProduct.productIdentifier]]];
-//        if (myData) {
-//            NSURL *myProductDir = myProductIcon;
-//            [myFM createDirectoryAtURL:[myProductDir URLByDeletingLastPathComponent] withIntermediateDirectories:YES attributes:nil error:nil];
-//
-//            [myFM createFileAtPath:myProductIcon.path contents:myData attributes:nil];
-//        }
-//        myImage = [[UIImage alloc] initWithData:myData];
-//    }
-//    return myImage;
-//}
-
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    NSArray * names = [NSArray arrayWithObjects: @"Sögur", @"Mína Sögur", nil];
-    return [names objectAtIndex:section];
+    Library *library = self.libraries[section];
+    return library.title;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if (section == 0) {
-        return self.bundledLibrary.books.count;
-    }
-    else{
-        return 0;
-    }
+    Library *library = self.libraries[section];
+    NSLog(@"number of rows in section: @%",library.books.count);
+    return library.books.count;
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
+    NSLog(@"number of libraries: %lu", (unsigned long)self.libraries.count);
+    return self.libraries.count;
 }
 
 - (IBAction)dictateModeButtonPressed:(id)sender {
@@ -144,16 +131,21 @@
     [self.dictateButton setTintColor: UIColor.redColor];
     
     NSURL *bundeledStoriesURL = [[NSBundle mainBundle] URLForResource:@"BundeledStories" withExtension:nil];
-//    self.bundledLibrary = [[Library alloc] initWithLibraryFolderUrl:bundeledStoriesURL];
-    self.bundledLibrary = [[Library alloc] initWithLibraryFolderUrl:bundeledStoriesURL andName:@"Ævintýri"];
+    self.bundledLibrary = [[Library alloc] initWithLibraryFolderUrl: bundeledStoriesURL andName:@"Ævintýri"];
     [self.bundledLibrary addLibraryUrl:[[[[NSFileManager defaultManager] URLsForDirectory:NSLibraryDirectory inDomains:NSUserDomainMask]objectAtIndex:0 ] URLByAppendingPathComponent:@"stories"]];
+    [self.libraries addObject: self.bundledLibrary];
     
+    NSURL *userStoriesURL = [[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask].firstObject;
+    userStoriesURL = [userStoriesURL URLByAppendingPathComponent: @"userstories"];
     
-    NSArray *userStoriesURL = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    if (![[NSFileManager defaultManager] fileExistsAtPath: userStoriesURL.path]) {
+        NSLog(@"there is no path %@", userStoriesURL.path);
+    }
+    
     NSLog(@"Searchpaths for documents in domain: \n %@", userStoriesURL);
-//    self.bundledLibrary = [[Library alloc] initWithLibraryFolderUrl:bundeledStoriesURL];
-    self.bundledLibrary = [[Library alloc] initWithLibraryFolderUrl:bundeledStoriesURL andName:@"Mínar Sögur"];
-    [self.bundledLibrary addLibraryUrl:[[[[NSFileManager defaultManager] URLsForDirectory:NSLibraryDirectory inDomains:NSUserDomainMask]objectAtIndex:0 ] URLByAppendingPathComponent:@"stories"]];
+    self.userLibrary = [[Library alloc] initWithLibraryFolderUrl:userStoriesURL andName:@"Mínar Sögur"];
+    [self.libraries addObject: self.userLibrary];
+    
     
     [self.libraryListView setDataSource:self];
     [self.libraryListView setDelegate:self];
@@ -165,24 +157,6 @@
 
 -(void)refreshTableView{
     [self.libraryListView reloadData];
-}
-
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    if ([sender isKindOfClass:[UITableViewCell class]]) {
-        UITableViewCell *cell = (UITableViewCell*) sender;
-        
-        BookViewController *destination = segue.destinationViewController;
-        
-        Book* selectedBook = [self.bundledLibrary.books objectAtIndex:cell.tag];
-        
-        destination.book = selectedBook;
-    }
 }
 
 @end

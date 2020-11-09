@@ -67,15 +67,12 @@
                                                     <color key="tintColor" systemColor="systemRedColor"/>
                                                 </imageView>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="43" placeholderIntrinsicHeight="43" image="AppIcon76x76.png" translatesAutoresizingMaskIntoConstraints="NO" id="I4i-fM-hiO">
-                                                    <rect key="frame" x="16" y="0.0" width="44.333333333333314" height="44"/>
+                                                    <rect key="frame" x="16" y="0.0" width="44" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.17000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <connections>
-                                            <segue destination="w8Y-WB-nWC" kind="modal" identifier="goToBook" id="Udn-OG-cMW"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="JoZ-hq-FZx">
                                         <rect key="frame" x="0.0" y="72" width="335" height="44"/>
