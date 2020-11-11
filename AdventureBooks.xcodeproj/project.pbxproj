@@ -27,7 +27,6 @@
 		8C406B110C2979FA9C4B1726 /* Pods_aevintyri.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB693AFA3A214452C22543A8 /* Pods_aevintyri.framework */; };
 		A80122792508C98C004091C5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A14218919B9F08E00395714 /* AVFoundation.framework */; };
 		A801227A2508C9C6004091C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8B88D319A212F400F53CA2 /* Foundation.framework */; };
-		A801227B2508C9E8004091C5 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AEADE2619DD74AF009F104C /* StoreKit.framework */; };
 		A801227C2508C9F3004091C5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8B88D719A212F400F53CA2 /* UIKit.framework */; };
 		A84278D0254C6AC800F472B1 /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84278CF254C6AC800F472B1 /* BookTableViewCell.swift */; };
 		A89E8CA4253D74AF00D8C685 /* BookPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89E8CA3253D74AF00D8C685 /* BookPageView.swift */; };
@@ -80,7 +79,6 @@
 		8ABB5B4019C1DCE500906FF5 /* play-button-vector.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play-button-vector.png"; sourceTree = "<group>"; };
 		8ABB5B4219C2214600906FF5 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		8ABB5B4319C2214600906FF5 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
-		8AEADE2619DD74AF009F104C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		8AEADE2819DD8968009F104C /* books.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = books.jpg; sourceTree = "<group>"; };
 		8AED97BE19A7344F00BC47C3 /* jamieson_plate1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = jamieson_plate1.jpg; sourceTree = "<group>"; };
 		A84278CF254C6AC800F472B1 /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
@@ -96,7 +94,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A801227C2508C9F3004091C5 /* UIKit.framework in Frameworks */,
-				A801227B2508C9E8004091C5 /* StoreKit.framework in Frameworks */,
 				A801227A2508C9C6004091C5 /* Foundation.framework in Frameworks */,
 				A80122792508C98C004091C5 /* AVFoundation.framework in Frameworks */,
 				8C406B110C2979FA9C4B1726 /* Pods_aevintyri.framework in Frameworks */,
@@ -139,7 +136,6 @@
 		8A8B88D219A212F400F53CA2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8AEADE2619DD74AF009F104C /* StoreKit.framework */,
 				8A14218919B9F08E00395714 /* AVFoundation.framework */,
 				8A8B88D319A212F400F53CA2 /* Foundation.framework */,
 				8A8B88D519A212F400F53CA2 /* CoreGraphics.framework */,

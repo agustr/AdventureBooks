@@ -20,10 +20,7 @@
         //Set the icon for the book
         NSURL *tmpurl = [bookFolderUrl URLByAppendingPathComponent:@"icon.jpg"];
         if ([tmpurl checkResourceIsReachableAndReturnError:nil]) {
-            // there is no icon.jpg
             self.icon = tmpurl;
-        }else{
-            // set the icon reference.
         }
         
         //all the files that contain the word audio
@@ -55,26 +52,18 @@
         //create all the pages of the book
         //first check if there are as many images as audio
         //if ther is not there is something wrong with the book
-        if (pageImageURLs.count == pageAudioURLs.count && pageAudioURLs.count == pageTextURLs.count) {
-            for (int iterator=0; iterator<pageImageURLs.count; iterator++) {
-                Page *tmpPage =[[Page alloc]
-                                initWithImageURL:[pageImageURLs objectAtIndex:iterator]
-                                AudioURL:[pageAudioURLs objectAtIndex:iterator]
-                                andTextURL:[pageTextURLs objectAtIndex:iterator]];
-                [self.pages addObject:tmpPage];
-            }
-        }
-        else if (pageImageURLs.count == pageAudioURLs.count){
-            for (int iterator=0; iterator<pageImageURLs.count; iterator++) {
-                Page *tmpPage =[[Page alloc]
-                                initWithImageURL:[pageImageURLs objectAtIndex:iterator]
-                                AudioURL:[pageAudioURLs objectAtIndex:iterator]
-                                andTextURL:nil];
-                [self.pages addObject:tmpPage];
-            }
-        }
-        else{
-            return nil;
+        int numberOfPages =(int) MAX( MAX(pageImageURLs.count, pageAudioURLs.count), pageTextURLs.count);
+        
+        for (int iterator=0; iterator<numberOfPages; iterator++) {
+            NSURL *imageURL = iterator < pageImageURLs.count ? [pageImageURLs objectAtIndex:iterator] : nil;
+            NSURL *audioURL = iterator < pageAudioURLs.count ? [pageAudioURLs objectAtIndex:iterator] : nil;
+            NSURL *textURL = iterator < pageTextURLs.count ? [pageTextURLs objectAtIndex:iterator] : nil;
+            
+            Page *tmpPage = [[Page alloc]
+                            initWithImageURL:imageURL
+                            AudioURL:audioURL
+                            andTextURL:textURL];
+            [self.pages addObject:tmpPage];
         }
         
         //Get the cover URL and if that does not exist use the first page instead

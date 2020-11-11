@@ -5,7 +5,7 @@
 
 @property (nonatomic, retain, readwrite) NSMutableArray *books;
 @property (nonatomic, retain, readwrite) NSMutableArray *libraryUrls;  //all the floders where stories are stored
-@property (nonatomic, retain, readwrite) NSString *name;
+
 
 @end
 
@@ -24,12 +24,12 @@
     return result;
 }
 
--(id) initWithLibraryFolderUrl:(NSURL*) LibraryFolderURL andName: (NSString*) name {
+-(id) initWithLibraryFolderUrl:(NSURL*) LibraryFolderURL andTitle: (NSString*) name {
     
     if (self = [super init]) {
         self.books = [[NSMutableArray alloc] init];
         [self addLibraryUrl: LibraryFolderURL];
-        self.name = name;
+        self.title = name;
     }
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(getBooks)
@@ -38,7 +38,9 @@
     return self;
 }
 
--(int)getBooks{
+
+
+-(int) getBooks{
     //get all the books that are in the libraries folder
     //put those books in the books array
     NSArray *bookFolders;

@@ -41,10 +41,41 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     Book *book = [self bookAtIndexPath:indexPath];
+    if ([self.dictateButton isSelected] && ![[NSFileManager defaultManager] isWritableFileAtPath:book.bookUrl.path]){
+        // we are attempting to edit an item but it is stored in a write protected area.
+        // copy the item and rename.
+        if (![[NSFileManager defaultManager] fileExistsAtPath:[LibraryViewController userStoriesURL].path] ) {
+            // user folder does not exist
+            NSError *err;
+            if (![[NSFileManager defaultManager] createDirectoryAtPath:[LibraryViewController userStoriesURL].path withIntermediateDirectories:YES attributes:nil error:&err]){
+                NSLog(@"could not create folder: %@", err);
+            }
+        }
+        NSURL *newBookURL = [[LibraryViewController userStoriesURL] URLByAppendingPathComponent:book.title];
+        NSError *err;
+        if ([[NSFileManager defaultManager] copyItemAtURL:book.bookUrl toURL:newBookURL error:&err]) {
+            NSArray *folderContents = [[NSFileManager defaultManager] contentsOfDirectoryAtURL:newBookURL includingPropertiesForKeys:nil options:NSDirectoryEnumerationSkipsHiddenFiles error:&err];
+            for (NSURL *url in folderContents) {
+                if ([[url lastPathComponent] containsString:@"audio"]){
+                    NSLog(@"audiofile: %@", url);
+                    [[NSFileManager defaultManager] removeItemAtURL:url error:nil];
+                }
+            }
+            
+            [self.userLibrary getBooks];
+            book = [[Book alloc] initWithBookFolderURL:newBookURL];
+            
+        } else {
+            NSLog(@"could not copy the book because of error: %@", err);
+        }
+
+    }
     BookViewController *bookVC = [[BookViewController alloc] init];
     bookVC.book = book;
     [self.navigationController pushViewController:bookVC animated:YES];
 }
+
+
 
 - (Book *) bookAtIndexPath: (NSIndexPath *) indexPath {
     Library *selectedLibrary = [self.libraries objectAtIndex:indexPath.section];
@@ -60,8 +91,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    Library *lib = self.libraries[indexPath.section];
-    Book *book = lib.books[indexPath.row];
+    Book *book = [self bookAtIndexPath:indexPath];
     if (book) {
         UITableViewCell *bookCell = [self.libraryListView dequeueReusableCellWithIdentifier:@"bookCell"];
         bookCell.textLabel.text = book.title;
@@ -86,7 +116,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     Library *library = self.libraries[section];
-    NSLog(@"number of rows in section: @%",library.books.count);
+    NSLog(@"number of rows in section: @%", library.books.count);
     return library.books.count;
 }
 
@@ -122,6 +152,12 @@
     return self;
 }
 
++ (NSURL *) userStoriesURL {
+    NSURL *userStoriesURL = [[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask].firstObject;
+    userStoriesURL = [userStoriesURL URLByAppendingPathComponent: @"userstories"];
+    return userStoriesURL;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -131,19 +167,19 @@
     [self.dictateButton setTintColor: UIColor.redColor];
     
     NSURL *bundeledStoriesURL = [[NSBundle mainBundle] URLForResource:@"BundeledStories" withExtension:nil];
-    self.bundledLibrary = [[Library alloc] initWithLibraryFolderUrl: bundeledStoriesURL andName:@"Ævintýri"];
+    NSLog(@"bundeled stories : %@", bundeledStoriesURL.path);
+    self.bundledLibrary = [[Library alloc] initWithLibraryFolderUrl: bundeledStoriesURL andTitle:@"Ævintýri"];
     [self.bundledLibrary addLibraryUrl:[[[[NSFileManager defaultManager] URLsForDirectory:NSLibraryDirectory inDomains:NSUserDomainMask]objectAtIndex:0 ] URLByAppendingPathComponent:@"stories"]];
     [self.libraries addObject: self.bundledLibrary];
     
-    NSURL *userStoriesURL = [[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask].firstObject;
-    userStoriesURL = [userStoriesURL URLByAppendingPathComponent: @"userstories"];
+    NSURL * userStoriesURL = [LibraryViewController userStoriesURL];
     
     if (![[NSFileManager defaultManager] fileExistsAtPath: userStoriesURL.path]) {
         NSLog(@"there is no path %@", userStoriesURL.path);
     }
     
     NSLog(@"Searchpaths for documents in domain: \n %@", userStoriesURL);
-    self.userLibrary = [[Library alloc] initWithLibraryFolderUrl:userStoriesURL andName:@"Mínar Sögur"];
+    self.userLibrary = [[Library alloc] initWithLibraryFolderUrl:userStoriesURL andTitle:@"Mínar Sögur"];
     [self.libraries addObject: self.userLibrary];
     
     

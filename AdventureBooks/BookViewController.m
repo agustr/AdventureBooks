@@ -94,76 +94,27 @@
                       completion:nil];
     }
 }
-- (IBAction)singleTapGesture:(id)sender {
-    NSLog(@"single tap recognized");
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-   // NSLog(@"the path is: %@", self.book.bookUrl.path);
     self.dataSource = self;
     
-    UIStoryboard *storyboard =[UIStoryboard storyboardWithName:@"iPhone"
-                                                        bundle:[NSBundle mainBundle]];
+    UIStoryboard *storyboard =[UIStoryboard storyboardWithName:@"iPhone" bundle:[NSBundle mainBundle]];
+    BookPageViewController *pageVC =[storyboard instantiateViewControllerWithIdentifier:@"pageView2"];
     
-    BookPageViewController *dataViewController =[storyboard instantiateViewControllerWithIdentifier:@"pageView2"];
-    
-    Page* firsPage = [self.book.pages objectAtIndex:0];
-    dataViewController.myPage = self.book.pages[0];
+    pageVC.myPage = self.book.pages[0];
     
     NSMutableArray* viewControllers = [[NSMutableArray alloc]init];
-    [viewControllers addObject:dataViewController];
+    [viewControllers addObject:pageVC];
     
     [self setViewControllers:viewControllers
                    direction:UIPageViewControllerNavigationDirectionForward
                     animated:NO
                   completion:nil];
-    
-    //self.view.gestureRecognizers = self.pageViewController.gestureRecognizers;
-    
-    // Find the tap gesture recognizer so we can remove it!
-    UIGestureRecognizer* tapRecognizer = nil;
-    for (UIGestureRecognizer* recognizer in self.gestureRecognizers) {
-        if ( [recognizer isKindOfClass:[UITapGestureRecognizer class]] ) {
-            tapRecognizer = recognizer;
-            break;
-        }
-    }
-    if ( tapRecognizer ) {
-        [self.view removeGestureRecognizer:tapRecognizer];
-    }
-}
-
--(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-
-
 }
 
 -(void)dismissSelf{
     [self.navigationController popViewControllerAnimated:YES];
 }
-
--(void)tapGestureGrabbed{
-    NSLog(@"tap taken");
-}
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

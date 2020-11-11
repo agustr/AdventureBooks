@@ -15,7 +15,6 @@
 @property (nonatomic, retain) NSURL *audioExcerpt;
 @property (nonatomic, retain) NSMutableArray *pages;
 
-
 -(id) initWithBookFolderURL: (NSURL *) bookFolderUrl;
 
 
