@@ -51,8 +51,6 @@
     [_playAudioSwitch setOn:[[NSUserDefaults standardUserDefaults] boolForKey:@"playAudio"] animated:YES];
 }
 - (IBAction)settingsChangeAction:(id)sender {
-    UISwitch* actionSwitch = (UISwitch*)sender;
-    
     [[NSUserDefaults standardUserDefaults] setBool:_showTextSwitch.on forKey:@"showText"];
     
     if (!_playAudioSwitch.on) {

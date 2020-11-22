@@ -1,11 +1,3 @@
-//
-//  BookViewController.m
-//  AdventureBooks
-//
-//  Created by Agust Rafnsson on 04/09/14.
-//  Copyright (c) 2014 Agust Rafnsson. All rights reserved.
-//
-
 #import "BookViewController.h"
 
 
@@ -21,8 +13,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
-        
     }
     return self;
 }

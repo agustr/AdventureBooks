@@ -1,5 +1,5 @@
 #import "Book.h"
-#import "Page.h"
+#import "Ævintýri-swift.h"
 
 @implementation Book
 
@@ -8,22 +8,15 @@
     if (self=[super init]) {
         
         self.bookUrl = bookFolderUrl;
-        
-        //if the URL is valid return initialized book.
-        //if the URL is not valid return nil.
-        NSFileManager *fileManager = [NSFileManager defaultManager];
-        NSArray *folderContents = [fileManager contentsOfDirectoryAtURL:bookFolderUrl includingPropertiesForKeys:nil options:0 error:nil];
-        
-        //Set the title of the book.
         self.title = bookFolderUrl.lastPathComponent;
         
-        //Set the icon for the book
+        NSArray *folderContents = [[NSFileManager defaultManager] contentsOfDirectoryAtURL:bookFolderUrl includingPropertiesForKeys:nil options:0 error:nil];
+    
         NSURL *tmpurl = [bookFolderUrl URLByAppendingPathComponent:@"icon.jpg"];
         if ([tmpurl checkResourceIsReachableAndReturnError:nil]) {
             self.icon = tmpurl;
         }
         
-        //all the files that contain the word audio
         NSPredicate *fltr = [NSPredicate predicateWithFormat:@"lastPathComponent contains 'audio'"];
         NSArray *pageAudioURLs = [folderContents filteredArrayUsingPredicate:fltr];
         pageAudioURLs = [pageAudioURLs sortedArrayUsingSelector:@selector(lastPathComponent)];
@@ -49,9 +42,7 @@
             return [[obj1 lastPathComponent] compare:[obj2 lastPathComponent] options:NSNumericSearch];
         }];
         
-        //create all the pages of the book
-        //first check if there are as many images as audio
-        //if ther is not there is something wrong with the book
+
         int numberOfPages =(int) MAX( MAX(pageImageURLs.count, pageAudioURLs.count), pageTextURLs.count);
         
         for (int iterator=0; iterator<numberOfPages; iterator++) {
@@ -59,24 +50,16 @@
             NSURL *audioURL = iterator < pageAudioURLs.count ? [pageAudioURLs objectAtIndex:iterator] : nil;
             NSURL *textURL = iterator < pageTextURLs.count ? [pageTextURLs objectAtIndex:iterator] : nil;
             
-            Page *tmpPage = [[Page alloc]
-                            initWithImageURL:imageURL
-                            AudioURL:audioURL
-                            andTextURL:textURL];
+            Page *tmpPage = [[Page alloc] initWithImage:imageURL audio:audioURL text:textURL book:self];
             [self.pages addObject:tmpPage];
         }
         
-        //Get the cover URL and if that does not exist use the first page instead
         tmpurl = [bookFolderUrl URLByAppendingPathComponent:@"cover.jpg"];
         if ([tmpurl checkResourceIsReachableAndReturnError:nil]) {
-            // there is no cover.jpg
-            // use the first page in its stead
             self.coverURL = [pageImageURLs objectAtIndex:0];
         }else{
-            // set the icon reference.
             self.coverURL = tmpurl;
         }
-        
         
         return self;
     }

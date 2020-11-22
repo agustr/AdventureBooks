@@ -7,6 +7,7 @@
 //
 
 #import "BookAppDelegate.h"
+#import <AVFoundation/AVFoundation.h>
 
 
 @implementation BookAppDelegate
@@ -21,6 +22,18 @@
     [[NSUserDefaults standardUserDefaults] registerDefaults:@{ @"showText" : @YES }];
     [[NSUserDefaults standardUserDefaults] registerDefaults:@{ @"autoPageTurning" : @YES }];
     [[NSUserDefaults standardUserDefaults] registerDefaults:@{ @"playAudio" : @YES }];
+    
+    // Get the singleton instance.
+    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+    
+        // Set the audio session category, mode, and options.
+    NSError *err;
+    [audioSession setCategory:AVAudioSessionCategoryPlayAndRecord mode:AVAudioSessionModeSpokenAudio options: AVAudioSessionCategoryOptionAllowBluetooth | AVAudioSessionCategoryOptionAllowBluetoothA2DP | AVAudioSessionCategoryOptionAllowAirPlay error: &err];
+    if (err){
+        NSLog(@"something went wrong with setting upp the audio session.");
+        assert(err);
+    }
+    
     
     return YES;
 }

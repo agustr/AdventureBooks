@@ -116,7 +116,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     Library *library = self.libraries[section];
-    NSLog(@"number of rows in section: @%", library.books.count);
     return library.books.count;
 }
 

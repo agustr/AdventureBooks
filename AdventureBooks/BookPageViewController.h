@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
-#import "Page.h"
+#import "Ævintýri-Swift.h"
+
 
 @interface BookPageViewController : UIViewController <AVAudioPlayerDelegate>
 @property (nonatomic,retain) Page *myPage;
