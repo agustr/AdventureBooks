@@ -16,7 +16,6 @@
 		8A8B88E619A212F400F53CA2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A8B88E519A212F400F53CA2 /* Images.xcassets */; };
 		8A8B890319A2135500F53CA2 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A8B890219A2135500F53CA2 /* iPhone.storyboard */; };
 		8A8B890619A21DF700F53CA2 /* Library.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8B890519A21DF700F53CA2 /* Library.m */; };
-		8A8B890919A2216100F53CA2 /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8B890819A2216100F53CA2 /* Book.m */; };
 		8A8B890F19A2605D00F53CA2 /* LibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8B890E19A2605D00F53CA2 /* LibraryViewController.m */; };
 		8ABB5B4119C1DCE500906FF5 /* play-button-vector.png in Resources */ = {isa = PBXBuildFile; fileRef = 8ABB5B4019C1DCE500906FF5 /* play-button-vector.png */; };
 		8ABB5B4419C2214600906FF5 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 8ABB5B4219C2214600906FF5 /* settings.png */; };
@@ -31,6 +30,7 @@
 		A89E8CA4253D74AF00D8C685 /* BookPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89E8CA3253D74AF00D8C685 /* BookPageView.swift */; };
 		A8A25C4F2507B24500101C4E /* BundeledStories in Resources */ = {isa = PBXBuildFile; fileRef = A8A25C4B2507A59100101C4E /* BundeledStories */; };
 		A8A7E4D72567E74600712870 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A7E4D62567E74600712870 /* Page.swift */; };
+		A8A7E4E3256A7D9100712870 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A7E4E2256A7D9100712870 /* Book.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -70,8 +70,6 @@
 		8A8B890219A2135500F53CA2 /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
 		8A8B890419A21DF700F53CA2 /* Library.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Library.h; sourceTree = "<group>"; };
 		8A8B890519A21DF700F53CA2 /* Library.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Library.m; sourceTree = "<group>"; };
-		8A8B890719A2216100F53CA2 /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
-		8A8B890819A2216100F53CA2 /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
 		8A8B890D19A2605D00F53CA2 /* LibraryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibraryViewController.h; sourceTree = "<group>"; };
 		8A8B890E19A2605D00F53CA2 /* LibraryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibraryViewController.m; sourceTree = "<group>"; };
 		8ABB5B4019C1DCE500906FF5 /* play-button-vector.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play-button-vector.png"; sourceTree = "<group>"; };
@@ -84,6 +82,7 @@
 		A89E8CA3253D74AF00D8C685 /* BookPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookPageView.swift; sourceTree = "<group>"; };
 		A8A25C4B2507A59100101C4E /* BundeledStories */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BundeledStories; sourceTree = "<group>"; };
 		A8A7E4D62567E74600712870 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Page.swift; path = AdventureBooks/Page.swift; sourceTree = "<group>"; };
+		A8A7E4E2256A7D9100712870 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		FB693AFA3A214452C22543A8 /* Pods_aevintyri.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_aevintyri.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -173,8 +172,7 @@
 				A8A7E4D62567E74600712870 /* Page.swift */,
 				8A8B890419A21DF700F53CA2 /* Library.h */,
 				8A8B890519A21DF700F53CA2 /* Library.m */,
-				8A8B890719A2216100F53CA2 /* Book.h */,
-				8A8B890819A2216100F53CA2 /* Book.m */,
+				A8A7E4E2256A7D9100712870 /* Book.swift */,
 			);
 			name = Library;
 			sourceTree = "<group>";
@@ -347,7 +345,7 @@
 				8A84FA1419B8BAAE003C7F0F /* BookViewController.m in Sources */,
 				8A84FA1719B999A6003C7F0F /* BookPageViewController.m in Sources */,
 				A8A7E4D72567E74600712870 /* Page.swift in Sources */,
-				8A8B890919A2216100F53CA2 /* Book.m in Sources */,
+				A8A7E4E3256A7D9100712870 /* Book.swift in Sources */,
 				8A8B890619A21DF700F53CA2 /* Library.m in Sources */,
 				8A8B88E019A212F400F53CA2 /* main.m in Sources */,
 				8A8B88E419A212F400F53CA2 /* BookAppDelegate.m in Sources */,

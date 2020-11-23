@@ -29,7 +29,7 @@ import AVFoundation
     var audioPlayer: AVAudioPlayer?
     unowned let book: Book
     
-    @objc init(image:URL?, audio:URL?, text:URL?, book:Book) {
+    init(image:URL?, audio:URL?, text:URL?, book:Book) {
         self.book = book
         self.imageURL = image
         self.audioURL = audio

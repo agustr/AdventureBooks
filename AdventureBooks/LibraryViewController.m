@@ -41,7 +41,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     Book *book = [self bookAtIndexPath:indexPath];
-    if ([self.dictateButton isSelected] && ![[NSFileManager defaultManager] isWritableFileAtPath:book.bookUrl.path]){
+    if ([self.dictateButton isSelected] && ![[NSFileManager defaultManager] isWritableFileAtPath:book.sourceFolder.path]){
         // we are attempting to edit an item but it is stored in a write protected area.
         // copy the item and rename.
         if (![[NSFileManager defaultManager] fileExistsAtPath:[LibraryViewController userStoriesURL].path] ) {
@@ -53,7 +53,7 @@
         }
         NSURL *newBookURL = [[LibraryViewController userStoriesURL] URLByAppendingPathComponent:book.title];
         NSError *err;
-        if ([[NSFileManager defaultManager] copyItemAtURL:book.bookUrl toURL:newBookURL error:&err]) {
+        if ([[NSFileManager defaultManager] copyItemAtURL:book.sourceFolder toURL:newBookURL error:&err]) {
             NSArray *folderContents = [[NSFileManager defaultManager] contentsOfDirectoryAtURL:newBookURL includingPropertiesForKeys:nil options:NSDirectoryEnumerationSkipsHiddenFiles error:&err];
             for (NSURL *url in folderContents) {
                 if ([[url lastPathComponent] containsString:@"audio"]){
@@ -63,7 +63,7 @@
             }
             
             [self.userLibrary getBooks];
-            book = [[Book alloc] initWithBookFolderURL:newBookURL];
+            book = [[Book alloc] initWithSourceFolder:newBookURL];
             
         } else {
             NSLog(@"could not copy the book because of error: %@", err);
@@ -95,7 +95,7 @@
     if (book) {
         UITableViewCell *bookCell = [self.libraryListView dequeueReusableCellWithIdentifier:@"bookCell"];
         bookCell.textLabel.text = book.title;
-        bookCell.detailTextLabel.text = book.author;
+        
         bookCell.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:book.icon]];
         CGRect imageFrame = bookCell.imageView.frame;
         imageFrame.size.height = bookCell.frame.size.height -2;

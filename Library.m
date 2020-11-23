@@ -1,11 +1,11 @@
 #import "Library.h"
 #import "Book.h"
 
+
 @interface Library()
 
 @property (nonatomic, retain, readwrite) NSMutableArray *books;
 @property (nonatomic, retain, readwrite) NSMutableArray *libraryUrls;  //all the floders where stories are stored
-
 
 @end
 
@@ -17,7 +17,7 @@
 
 -(BOOL) deleteBook: (Book*) delBook {
     NSError* err = nil;
-    BOOL result = [[NSFileManager defaultManager] removeItemAtURL:delBook.bookUrl error:&err];
+    BOOL result = [[NSFileManager defaultManager] removeItemAtURL:delBook.sourceFolder error:&err];
     
     [self getBooks];
     
@@ -38,11 +38,7 @@
     return self;
 }
 
-
-
 -(int) getBooks{
-    //get all the books that are in the libraries folder
-    //put those books in the books array
     NSArray *bookFolders;
     NSFileManager *fm = [NSFileManager defaultManager];
     
@@ -52,7 +48,7 @@
         bookFolders = [fm contentsOfDirectoryAtURL:libURL includingPropertiesForKeys:nil options:NSDirectoryEnumerationSkipsHiddenFiles error:nil];
         for (NSURL *bookFolderUrl in bookFolders) {
             
-            Book *someBook = [[Book alloc] initWithBookFolderURL:bookFolderUrl];
+            Book *someBook = [[Book alloc] initWithSourceFolder:bookFolderUrl];
             if (someBook) {
                 [self.books addObject:someBook];
             }
