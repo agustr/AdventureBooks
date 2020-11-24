@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BookPageViewController.h"
-#import "Book.h"
+
 
 @interface BookViewController : UIPageViewController
 

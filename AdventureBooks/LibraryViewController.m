@@ -1,5 +1,4 @@
 #import "LibraryViewController.h"
-#import "Library.h"
 #import "BookViewController.h"
 #import <StoreKit/StoreKit.h>
 
@@ -29,9 +28,6 @@
     return _libraries;
 }
 
-// Override to support conditional editing of the table view.
-// This only needs to be implemented if you are going to be returning NO
-// for some items. By default, all items are editable.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
         return YES;
@@ -62,7 +58,7 @@
                 }
             }
             
-            [self.userLibrary getBooks];
+            [self.userLibrary reloadLibrary];
             book = [[Book alloc] initWithSourceFolder:newBookURL];
             
         } else {
@@ -83,10 +79,9 @@
     return selectedBook;
 }
 
-// Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [self.bundledLibrary deleteBook:[self.bundledLibrary.books objectAtIndex:indexPath.row]];
+        //TODO: delete a book
     }
 }
 
@@ -136,7 +131,6 @@
 - (IBAction)settingButtonPressed:(id)sender {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"iPhone" bundle:nil];
     UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"settingsViewController"];
-    //vc.view.backgroundColor = [UIColor clearColor];
     self.modalPresentationStyle = UIModalPresentationCurrentContext;
     self.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     [self presentViewController:vc animated:YES completion:Nil];
@@ -167,8 +161,7 @@
     
     NSURL *bundeledStoriesURL = [[NSBundle mainBundle] URLForResource:@"BundeledStories" withExtension:nil];
     NSLog(@"bundeled stories : %@", bundeledStoriesURL.path);
-    self.bundledLibrary = [[Library alloc] initWithLibraryFolderUrl: bundeledStoriesURL andTitle:@"Ævintýri"];
-    [self.bundledLibrary addLibraryUrl:[[[[NSFileManager defaultManager] URLsForDirectory:NSLibraryDirectory inDomains:NSUserDomainMask]objectAtIndex:0 ] URLByAppendingPathComponent:@"stories"]];
+    self.bundledLibrary = [[Library alloc] initWithFolder:bundeledStoriesURL AndTitle:@"Ævintýri"];
     [self.libraries addObject: self.bundledLibrary];
     
     NSURL * userStoriesURL = [LibraryViewController userStoriesURL];
@@ -178,7 +171,8 @@
     }
     
     NSLog(@"Searchpaths for documents in domain: \n %@", userStoriesURL);
-    self.userLibrary = [[Library alloc] initWithLibraryFolderUrl:userStoriesURL andTitle:@"Mínar Sögur"];
+    self.userLibrary = [[Library alloc] initWithFolder:userStoriesURL AndTitle:@"Mínar Sögur"];
+    
     [self.libraries addObject: self.userLibrary];
     
     

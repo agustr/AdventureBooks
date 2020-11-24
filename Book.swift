@@ -7,7 +7,8 @@ import Foundation
     @objc let title: String
     
     @objc init?(sourceFolder: URL) {
-        if sourceFolder.isFileURL {
+        var isDirectory:ObjCBool = false
+        if FileManager.default.fileExists(atPath: sourceFolder.path, isDirectory: &isDirectory) && isDirectory.boolValue {
             self.sourceFolder = sourceFolder
             self.title = sourceFolder.lastPathComponent
             super.init()
