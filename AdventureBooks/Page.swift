@@ -1,11 +1,10 @@
-import Foundation
 import AVFoundation
-
+import Foundation
 
 @objc class Page: NSObject {
     @objc var imageURL: URL?
     @objc var audioURL: URL? {
-        didSet{
+        didSet {
             if let audioURL = audioURL {
                 do {
                     if #available(iOS 10.0, *) {
@@ -29,7 +28,7 @@ import AVFoundation
     var audioPlayer: AVAudioPlayer?
     unowned let book: Book
     
-    init(image:URL?, audio:URL?, text:URL?, book:Book) {
+    init(image: URL?, audio: URL?, text: URL?, book: Book) {
         self.book = book
         self.imageURL = image
         self.audioURL = audio
@@ -46,14 +45,11 @@ import AVFoundation
     }
 }
 
-extension Page:AVAudioPlayerDelegate{
-    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool){
-        
-    }
+extension Page: AVAudioPlayerDelegate {
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {}
 
-    
     /* if an error occurs while decoding it will be reported to the delegate. */
-    func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer, error: Error?){
+    func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer, error: Error?) {
         //
     }
 }

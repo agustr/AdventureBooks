@@ -1,12 +1,12 @@
 import Foundation
 
 @objc class Book: NSObject {
-    @objc var pages:[Page] = []
+    @objc var pages: [Page] = []
     @objc var icon: URL?
     @objc let sourceFolder: URL
     @objc let title: String
     
-    @objc init?(sourceFolder:URL) {
+    @objc init?(sourceFolder: URL) {
         if sourceFolder.isFileURL {
             self.sourceFolder = sourceFolder
             self.title = sourceFolder.lastPathComponent
@@ -19,13 +19,13 @@ import Foundation
     }
     
     func createPages() -> [Page] {
-        let images:[URL] = getFilesWithPredicate(predicate: "image")
-        let audios:[URL] = getFilesWithPredicate(predicate: "audio")
-        let texts:[URL] = getFilesWithPredicate(predicate: "text")
+        let images: [URL] = getFilesWithPredicate(predicate: "image")
+        let audios: [URL] = getFilesWithPredicate(predicate: "audio")
+        let texts: [URL] = getFilesWithPredicate(predicate: "text")
         let numberOfPages = ([images.count, audios.count, texts.count].max() != nil) ? [images.count, audios.count, texts.count].max()! : 0
         
-        var tempPages:[Page] = []
-        for _ in 0..<numberOfPages {
+        var tempPages: [Page] = []
+        for _ in 0 ..< numberOfPages {
             tempPages.append(Page(image: nil, audio: nil, text: nil, book: self))
         }
         for (index, image) in images.enumerated() {
@@ -41,15 +41,15 @@ import Foundation
         return tempPages
     }
     
-    func getFilesWithPredicate(predicate:String) -> [URL] {
-        var result:[URL] = []
+    func getFilesWithPredicate(predicate: String) -> [URL] {
+        var result: [URL] = []
         do {
-            let folderContents = try FileManager.default.contentsOfDirectory(at: sourceFolder, includingPropertiesForKeys: nil, options: FileManager.DirectoryEnumerationOptions.skipsHiddenFiles )
+            let folderContents = try FileManager.default.contentsOfDirectory(at: sourceFolder, includingPropertiesForKeys: nil, options: FileManager.DirectoryEnumerationOptions.skipsHiddenFiles)
             
             result = (folderContents.compactMap { (url) -> URL? in
                 url.lastPathComponent.hasPrefix(predicate) ? url : nil
             }).sorted { (first, second) -> Bool in
-                first.lastPathComponent<second.lastPathComponent
+                first.lastPathComponent < second.lastPathComponent
             }
         } catch {
             print("Unexpected error: \(error).")
