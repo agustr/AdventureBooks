@@ -11,8 +11,6 @@
 		8A84FA1419B8BAAE003C7F0F /* BookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A84FA1319B8BAAE003C7F0F /* BookViewController.m */; };
 		8A84FA1719B999A6003C7F0F /* BookPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A84FA1619B999A6003C7F0F /* BookPageViewController.m */; };
 		8A8B88DE19A212F400F53CA2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A8B88DC19A212F400F53CA2 /* InfoPlist.strings */; };
-		8A8B88E019A212F400F53CA2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8B88DF19A212F400F53CA2 /* main.m */; };
-		8A8B88E419A212F400F53CA2 /* BookAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8B88E319A212F400F53CA2 /* BookAppDelegate.m */; };
 		8A8B88E619A212F400F53CA2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A8B88E519A212F400F53CA2 /* Images.xcassets */; };
 		8A8B890319A2135500F53CA2 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A8B890219A2135500F53CA2 /* iPhone.storyboard */; };
 		8A8B890F19A2605D00F53CA2 /* LibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8B890E19A2605D00F53CA2 /* LibraryViewController.m */; };
@@ -26,6 +24,7 @@
 		A801227A2508C9C6004091C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8B88D319A212F400F53CA2 /* Foundation.framework */; };
 		A801227C2508C9F3004091C5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8B88D719A212F400F53CA2 /* UIKit.framework */; };
 		A84278D0254C6AC800F472B1 /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84278CF254C6AC800F472B1 /* BookTableViewCell.swift */; };
+		A8518429256FA49F005575B5 /* BookAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8518428256FA49F005575B5 /* BookAppDelegate.swift */; };
 		A8859CF6256C56D100E65923 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8859CF5256C56D100E65923 /* Library.swift */; };
 		A89E8CA4253D74AF00D8C685 /* BookPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89E8CA3253D74AF00D8C685 /* BookPageView.swift */; };
 		A8A25C4F2507B24500101C4E /* BundeledStories in Resources */ = {isa = PBXBuildFile; fileRef = A8A25C4B2507A59100101C4E /* BundeledStories */; };
@@ -62,10 +61,7 @@
 		8A8B88D719A212F400F53CA2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8A8B88DB19A212F400F53CA2 /* AdventureBooks-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AdventureBooks-Info.plist"; sourceTree = "<group>"; };
 		8A8B88DD19A212F400F53CA2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		8A8B88DF19A212F400F53CA2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8A8B88E119A212F400F53CA2 /* AdventureBooks-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AdventureBooks-Prefix.pch"; sourceTree = "<group>"; };
-		8A8B88E219A212F400F53CA2 /* BookAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookAppDelegate.h; sourceTree = "<group>"; };
-		8A8B88E319A212F400F53CA2 /* BookAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookAppDelegate.m; sourceTree = "<group>"; };
 		8A8B88E519A212F400F53CA2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8A8B890219A2135500F53CA2 /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
 		8A8B890D19A2605D00F53CA2 /* LibraryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibraryViewController.h; sourceTree = "<group>"; };
@@ -76,6 +72,7 @@
 		8AEADE2819DD8968009F104C /* books.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = books.jpg; sourceTree = "<group>"; };
 		8AED97BE19A7344F00BC47C3 /* jamieson_plate1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = jamieson_plate1.jpg; sourceTree = "<group>"; };
 		A84278CF254C6AC800F472B1 /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
+		A8518428256FA49F005575B5 /* BookAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BookAppDelegate.swift; path = AdventureBooks/BookAppDelegate.swift; sourceTree = "<group>"; };
 		A8859CF5256C56D100E65923 /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		A89E8CA2253D74AE00D8C685 /* Ævintýri-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Ævintýri-Bridging-Header.h"; sourceTree = "<group>"; };
 		A89E8CA3253D74AF00D8C685 /* BookPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookPageView.swift; sourceTree = "<group>"; };
@@ -112,6 +109,7 @@
 		8A8B88C719A212F400F53CA2 = {
 			isa = PBXGroup;
 			children = (
+				A8518428256FA49F005575B5 /* BookAppDelegate.swift */,
 				8AEADE2219DD6F63009F104C /* Library */,
 				8AED23B61BA6AF83008BB724 /* ViewControllers */,
 				8A8B88D919A212F400F53CA2 /* AdventureBooks */,
@@ -146,8 +144,6 @@
 			isa = PBXGroup;
 			children = (
 				8AED97BD19A7342900BC47C3 /* Graphics */,
-				8A8B88E219A212F400F53CA2 /* BookAppDelegate.h */,
-				8A8B88E319A212F400F53CA2 /* BookAppDelegate.m */,
 				8A8B88E519A212F400F53CA2 /* Images.xcassets */,
 				8A8B88DA19A212F400F53CA2 /* Supporting Files */,
 			);
@@ -159,7 +155,6 @@
 			children = (
 				8A8B88DB19A212F400F53CA2 /* AdventureBooks-Info.plist */,
 				8A8B88DC19A212F400F53CA2 /* InfoPlist.strings */,
-				8A8B88DF19A212F400F53CA2 /* main.m */,
 				8A8B88E119A212F400F53CA2 /* AdventureBooks-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -336,6 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8518429256FA49F005575B5 /* BookAppDelegate.swift in Sources */,
 				8A8B890F19A2605D00F53CA2 /* LibraryViewController.m in Sources */,
 				A8859CF6256C56D100E65923 /* Library.swift in Sources */,
 				A89E8CA4253D74AF00D8C685 /* BookPageView.swift in Sources */,
@@ -345,8 +341,6 @@
 				8A84FA1719B999A6003C7F0F /* BookPageViewController.m in Sources */,
 				A8A7E4D72567E74600712870 /* Page.swift in Sources */,
 				A8A7E4E3256A7D9100712870 /* Book.swift in Sources */,
-				8A8B88E019A212F400F53CA2 /* main.m in Sources */,
-				8A8B88E419A212F400F53CA2 /* BookAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
