@@ -1,8 +1,7 @@
-import UIKit
 import PureLayout
+import UIKit
 
 class BookPageView: UIView {
-    
     var shouldSetupConstraints = true
     
     var imageView: UIImageView!
@@ -13,7 +12,7 @@ class BookPageView: UIView {
     var imageHeightConstraint: NSLayoutConstraint?
     
     @objc var showText: Bool = true {
-        didSet{
+        didSet {
             if oldValue == showText { return }
             self.textView.isHidden = !showText
             setNeedsUpdateConstraints()
@@ -21,33 +20,33 @@ class BookPageView: UIView {
     }
     
     @objc var text: String? {
+        get {
+            return self.textView.text
+        }
         set {
             self.textView.text = newValue
             setNeedsUpdateConstraints()
         }
-        get{
-            return self.textView.text
-        }
     }
     
     @objc var image: UIImage? {
+        get {
+            return self.imageView.image
+        }
         set {
             self.imageView.image = newValue
             setNeedsUpdateConstraints()
         }
-        get {
-            return self.imageView.image
-        }
     }
     
     override var bounds: CGRect {
-        didSet{
+        didSet {
             setNeedsUpdateConstraints()
         }
     }
     
     fileprivate func setUpView() {
-        self.translatesAutoresizingMaskIntoConstraints = false;
+        self.translatesAutoresizingMaskIntoConstraints = false
         stackView = UIStackView()
         stackView.alignment = .center
         stackView.distribution = .equalSpacing
@@ -87,7 +86,7 @@ class BookPageView: UIView {
     }
     
     override func updateConstraints() {
-        if(shouldSetupConstraints) {
+        if shouldSetupConstraints {
             // AutoLayout constraints
             textView.autoPinEdge(toSuperviewEdge: .leading)
             textView.autoPinEdge(toSuperviewEdge: .trailing)
@@ -122,7 +121,7 @@ class BookPageView: UIView {
     func allowedImageSize(image: UIImage) -> CGSize {
         var remainingHeight: CGFloat = 0
         if showText {
-            remainingHeight = self.frame.size.height - textView.systemLayoutSizeFitting(CGSize(width: self.bounds.width,height: CGFloat(MAXFLOAT))).height
+            remainingHeight = self.frame.size.height - textView.systemLayoutSizeFitting(CGSize(width: self.bounds.width, height: CGFloat(MAXFLOAT))).height
         } else {
             remainingHeight = self.bounds.size.height
         }
@@ -130,7 +129,7 @@ class BookPageView: UIView {
         return imageViewSize(for: image, in: CGSize(width: self.frame.width, height: remainingHeight))
     }
     
-    func imageViewSize(for image:UIImage, in size:CGSize) -> CGSize {
+    func imageViewSize(for image: UIImage, in size: CGSize) -> CGSize {
         let aspectRatio = image.size.width/image.size.height
         var imageViewSize = CGSize(width: 0, height: 0)
         // use height as constraining factor

@@ -13,7 +13,6 @@
 		8A8B88DE19A212F400F53CA2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A8B88DC19A212F400F53CA2 /* InfoPlist.strings */; };
 		8A8B88E619A212F400F53CA2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A8B88E519A212F400F53CA2 /* Images.xcassets */; };
 		8A8B890319A2135500F53CA2 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A8B890219A2135500F53CA2 /* iPhone.storyboard */; };
-		8A8B890F19A2605D00F53CA2 /* LibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8B890E19A2605D00F53CA2 /* LibraryViewController.m */; };
 		8ABB5B4119C1DCE500906FF5 /* play-button-vector.png in Resources */ = {isa = PBXBuildFile; fileRef = 8ABB5B4019C1DCE500906FF5 /* play-button-vector.png */; };
 		8ABB5B4419C2214600906FF5 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 8ABB5B4219C2214600906FF5 /* settings.png */; };
 		8ABB5B4519C2214600906FF5 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 8ABB5B4319C2214600906FF5 /* home.png */; };
@@ -25,6 +24,7 @@
 		A801227C2508C9F3004091C5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8B88D719A212F400F53CA2 /* UIKit.framework */; };
 		A84278D0254C6AC800F472B1 /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84278CF254C6AC800F472B1 /* BookTableViewCell.swift */; };
 		A8518429256FA49F005575B5 /* BookAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8518428256FA49F005575B5 /* BookAppDelegate.swift */; };
+		A851842F256FF007005575B5 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A851842E256FF007005575B5 /* LibraryViewController.swift */; };
 		A8859CF6256C56D100E65923 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8859CF5256C56D100E65923 /* Library.swift */; };
 		A89E8CA4253D74AF00D8C685 /* BookPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89E8CA3253D74AF00D8C685 /* BookPageView.swift */; };
 		A8A25C4F2507B24500101C4E /* BundeledStories in Resources */ = {isa = PBXBuildFile; fileRef = A8A25C4B2507A59100101C4E /* BundeledStories */; };
@@ -64,8 +64,6 @@
 		8A8B88E119A212F400F53CA2 /* AdventureBooks-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AdventureBooks-Prefix.pch"; sourceTree = "<group>"; };
 		8A8B88E519A212F400F53CA2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8A8B890219A2135500F53CA2 /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
-		8A8B890D19A2605D00F53CA2 /* LibraryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibraryViewController.h; sourceTree = "<group>"; };
-		8A8B890E19A2605D00F53CA2 /* LibraryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibraryViewController.m; sourceTree = "<group>"; };
 		8ABB5B4019C1DCE500906FF5 /* play-button-vector.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play-button-vector.png"; sourceTree = "<group>"; };
 		8ABB5B4219C2214600906FF5 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		8ABB5B4319C2214600906FF5 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
@@ -73,6 +71,7 @@
 		8AED97BE19A7344F00BC47C3 /* jamieson_plate1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = jamieson_plate1.jpg; sourceTree = "<group>"; };
 		A84278CF254C6AC800F472B1 /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
 		A8518428256FA49F005575B5 /* BookAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BookAppDelegate.swift; path = AdventureBooks/BookAppDelegate.swift; sourceTree = "<group>"; };
+		A851842E256FF007005575B5 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
 		A8859CF5256C56D100E65923 /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		A89E8CA2253D74AE00D8C685 /* Ævintýri-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Ævintýri-Bridging-Header.h"; sourceTree = "<group>"; };
 		A89E8CA3253D74AF00D8C685 /* BookPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookPageView.swift; sourceTree = "<group>"; };
@@ -180,8 +179,7 @@
 				8A84FA1519B999A6003C7F0F /* BookPageViewController.h */,
 				8A84FA1619B999A6003C7F0F /* BookPageViewController.m */,
 				A89E8CA3253D74AF00D8C685 /* BookPageView.swift */,
-				8A8B890D19A2605D00F53CA2 /* LibraryViewController.h */,
-				8A8B890E19A2605D00F53CA2 /* LibraryViewController.m */,
+				A851842E256FF007005575B5 /* LibraryViewController.swift */,
 				8A84FA1219B8BAAE003C7F0F /* BookViewController.h */,
 				8A84FA1319B8BAAE003C7F0F /* BookViewController.m */,
 				A89E8CA2253D74AE00D8C685 /* Ævintýri-Bridging-Header.h */,
@@ -209,6 +207,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8A8B88FC19A212F400F53CA2 /* Build configuration list for PBXNativeTarget "aevintyri" */;
 			buildPhases = (
+				A85184332570F413005575B5 /* ShellScript */,
 				E6400279B42558ACEB50EACE /* [CP] Check Pods Manifest.lock */,
 				8A8B88CC19A212F400F53CA2 /* Sources */,
 				8A8B88CE19A212F400F53CA2 /* Resources */,
@@ -284,6 +283,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		A85184332570F413005575B5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
 		E6400279B42558ACEB50EACE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -332,7 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8518429256FA49F005575B5 /* BookAppDelegate.swift in Sources */,
-				8A8B890F19A2605D00F53CA2 /* LibraryViewController.m in Sources */,
+				A851842F256FF007005575B5 /* LibraryViewController.swift in Sources */,
 				A8859CF6256C56D100E65923 /* Library.swift in Sources */,
 				A89E8CA4253D74AF00D8C685 /* BookPageView.swift in Sources */,
 				A84278D0254C6AC800F472B1 /* BookTableViewCell.swift in Sources */,

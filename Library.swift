@@ -27,7 +27,9 @@ class Library: NSObject {
     private func loadBooksFrom(url: URL) -> [Book] {
         var books: [Book] = []
         do {
-            let bookFolders = try FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys: nil, options: .skipsHiddenFiles)
+            let bookFolders = try FileManager.default.contentsOfDirectory(at: url,
+                                                                          includingPropertiesForKeys: nil,
+                                                                          options: .skipsHiddenFiles)
             for url in bookFolders {
                 if let book = Book(sourceFolder: url) {
                     books.append(book)

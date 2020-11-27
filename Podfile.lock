@@ -1,16 +1,20 @@
 PODS:
   - PureLayout (3.1.6)
+  - SwiftLint (0.41.0)
 
 DEPENDENCIES:
   - PureLayout
+  - SwiftLint
 
 SPEC REPOS:
   trunk:
     - PureLayout
+    - SwiftLint
 
 SPEC CHECKSUMS:
   PureLayout: bd3c4ec3a3819ad387c99ebb72c6b129c3ed4d2d
+  SwiftLint: c585ebd615d9520d7fbdbe151f527977b0534f1e
 
-PODFILE CHECKSUM: d1faa4c1e6d89115213be9caf78368bb9c4660a0
+PODFILE CHECKSUM: 3f0d51265d1ff6f391032dcc25a744f0cd71dcb2
 
 COCOAPODS: 1.9.3
