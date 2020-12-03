@@ -25,6 +25,7 @@
 		A84278D0254C6AC800F472B1 /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84278CF254C6AC800F472B1 /* BookTableViewCell.swift */; };
 		A8518429256FA49F005575B5 /* BookAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8518428256FA49F005575B5 /* BookAppDelegate.swift */; };
 		A851842F256FF007005575B5 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A851842E256FF007005575B5 /* LibraryViewController.swift */; };
+		A851843525710839005575B5 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A851843425710839005575B5 /* LibraryView.swift */; };
 		A8859CF6256C56D100E65923 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8859CF5256C56D100E65923 /* Library.swift */; };
 		A89E8CA4253D74AF00D8C685 /* BookPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89E8CA3253D74AF00D8C685 /* BookPageView.swift */; };
 		A8A25C4F2507B24500101C4E /* BundeledStories in Resources */ = {isa = PBXBuildFile; fileRef = A8A25C4B2507A59100101C4E /* BundeledStories */; };
@@ -72,6 +73,7 @@
 		A84278CF254C6AC800F472B1 /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
 		A8518428256FA49F005575B5 /* BookAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BookAppDelegate.swift; path = AdventureBooks/BookAppDelegate.swift; sourceTree = "<group>"; };
 		A851842E256FF007005575B5 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
+		A851843425710839005575B5 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		A8859CF5256C56D100E65923 /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		A89E8CA2253D74AE00D8C685 /* Ævintýri-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Ævintýri-Bridging-Header.h"; sourceTree = "<group>"; };
 		A89E8CA3253D74AF00D8C685 /* BookPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookPageView.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				8A84FA1619B999A6003C7F0F /* BookPageViewController.m */,
 				A89E8CA3253D74AF00D8C685 /* BookPageView.swift */,
 				A851842E256FF007005575B5 /* LibraryViewController.swift */,
+				A851843425710839005575B5 /* LibraryView.swift */,
 				8A84FA1219B8BAAE003C7F0F /* BookViewController.h */,
 				8A84FA1319B8BAAE003C7F0F /* BookViewController.m */,
 				A89E8CA2253D74AE00D8C685 /* Ævintýri-Bridging-Header.h */,
@@ -354,6 +357,7 @@
 				A84278D0254C6AC800F472B1 /* BookTableViewCell.swift in Sources */,
 				8A7BE35419C07B470002502C /* BookSettingsViewController.m in Sources */,
 				8A84FA1419B8BAAE003C7F0F /* BookViewController.m in Sources */,
+				A851843525710839005575B5 /* LibraryView.swift in Sources */,
 				8A84FA1719B999A6003C7F0F /* BookPageViewController.m in Sources */,
 				A8A7E4D72567E74600712870 /* Page.swift in Sources */,
 				A8A7E4E3256A7D9100712870 /* Book.swift in Sources */,
