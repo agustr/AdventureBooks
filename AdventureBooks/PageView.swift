@@ -1,7 +1,13 @@
 import PureLayout
 import UIKit
 
-class BookPageView: UIView {
+class PageViewlksjdf: UIView {
+    override class var requiresConstraintBasedLayout: Bool {
+      return true
+    }
+    
+    let page: Page
+    
     var shouldSetupConstraints = true
     
     var imageView: UIImageView!
@@ -46,7 +52,7 @@ class BookPageView: UIView {
     }
     
     fileprivate func setUpView() {
-        self.translatesAutoresizingMaskIntoConstraints = false
+        
         stackView = UIStackView()
         stackView.alignment = .center
         stackView.distribution = .equalSpacing
@@ -71,18 +77,15 @@ class BookPageView: UIView {
         stackView.addArrangedSubview(textView)
     }
     
-    override init(frame: CGRect) {
+    init(frame: CGRect, andPage: Page) {
         showText = true
-        
+        self.page = andPage
         super.init(frame: frame)
         setUpView()
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        showText = true
-        
-        super.init(coder: aDecoder)
-        setUpView()
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func updateConstraints() {

@@ -25,6 +25,8 @@ class LibraryViewController: UIViewController {
     override func loadView() {
         let libraryView = LibraryView(frame: UIScreen.main.bounds)
         libraryView.tableView.dataSource = self
+        libraryView.tableView.delegate = self
+        libraryView.tableView.register(BookTableViewCell.self, forCellReuseIdentifier: BookTableViewCell.reuseIdentifer)
         self.view = libraryView
     }
 }
@@ -40,11 +42,29 @@ extension LibraryViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell: UITableViewCell? = libraryView.tableView.dequeueReusableCell(withIdentifier: "bookCell")
-        if cell == nil {
-            cell = UITableViewCell(style: .default, reuseIdentifier: "bookCell")
+        var cell: UITableViewCell
+        if let bookCell = libraryView.tableView.dequeueReusableCell(withIdentifier: BookTableViewCell.reuseIdentifer) as? BookTableViewCell {
+            bookCell.book = libraries[indexPath.section].books[indexPath.row]
+            cell = bookCell
+        } else {
+            cell = UITableViewCell()
         }
-        cell!.textLabel!.text = "Hello World"
-        return cell!
+        return cell
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return libraries.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return libraries[section].title
+    }
+}
+
+extension LibraryViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let book = libraries[indexPath.section].books[indexPath.row]
+        let bookViewController = BookViewController(book: book)
+        self.navigationController?.pushViewController(bookViewController, animated: true)
     }
 }

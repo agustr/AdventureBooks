@@ -1,18 +1,17 @@
 import Foundation
 
-@objc class Book: NSObject {
-    @objc var pages: [Page] = []
-    @objc var icon: URL?
-    @objc let sourceFolder: URL
-    @objc let title: String
+class Book {
+    var pages: [Page] = []
+    var icon: URL?
+    let sourceFolder: URL
+    let title: String
     
-    @objc init?(sourceFolder: URL) {
+    init?(sourceFolder: URL) {
         var isDirectory: ObjCBool = false
         if FileManager.default.fileExists(atPath: sourceFolder.path,
                                           isDirectory: &isDirectory) && isDirectory.boolValue {
             self.sourceFolder = sourceFolder
             self.title = sourceFolder.lastPathComponent
-            super.init()
             self.icon = self.getFilesWithPredicate(predicate: "icon").first
             self.pages = self.createPages()
         } else {
@@ -57,5 +56,29 @@ import Foundation
             print("Unexpected error: \(error).")
         }
         return result
+    }
+    
+    func pageBeforePage(page: Page) -> Page? {
+        var previousPage: Page?
+        let indexOfPage = self.pages.firstIndex { (inPage) -> Bool in
+            inPage === page
+        }
+        
+        if let indexOfPage = indexOfPage, indexOfPage > 0 {
+            previousPage = self.pages[indexOfPage - 1]
+        }
+        return previousPage
+    }
+    
+    func pageAfterPage(page: Page) -> Page? {
+        var nextPage: Page?
+        let indexOfPage = self.pages.firstIndex { (inPage) -> Bool in
+            inPage === page
+        }
+        
+        if let indexOfPage = indexOfPage, indexOfPage < self.pages.endIndex - 1 {
+            nextPage = self.pages[indexOfPage + 1]
+        }
+        return nextPage
     }
 }

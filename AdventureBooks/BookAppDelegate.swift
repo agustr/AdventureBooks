@@ -19,8 +19,7 @@ class BookAppDelegate: UIResponder, UIApplicationDelegate {
     }()
 
     func application(_ application: UIApplication,
-                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool
-    {
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
         UserDefaults.standard.register(defaults: ["showText": true])
         UserDefaults.standard.register(defaults: ["autoPageTurning": true])
         UserDefaults.standard.register(defaults: ["playAudio": true])

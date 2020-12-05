@@ -4,15 +4,14 @@ extension Notification.Name {
     static let libraryChanged = Notification.Name("LibraryChanged")
 }
 
-class Library: NSObject {
+class Library {
     private var libraryURLs: [URL] = []
-    @objc var title: String = ""
-    @objc var books: [Book] = []
+    var title: String = ""
+    var books: [Book] = []
 
-    @objc init(WithFolder folder: URL, AndTitle title: String) {
+    init(WithFolder folder: URL, AndTitle title: String) {
         self.title = title
         self.libraryURLs.append(folder)
-        super.init()
         self.books = loadBooksFrom(url: folder)
     }
 
