@@ -8,7 +8,8 @@ let USERSTORIESFOLDER = "userstories"
 class BookAppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var libraries: [Library] = []
-
+    var settings = Settings()
+    
     lazy var bundledStoriesURL: URL? = {
         Bundle.main.url(forResource: BUNDELEDSTORIESFOLDER, withExtension: nil)
     }()

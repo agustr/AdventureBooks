@@ -23,9 +23,13 @@
 		A851843525710839005575B5 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A851843425710839005575B5 /* LibraryView.swift */; };
 		A851843B2578CBDC005575B5 /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A851843A2578CBDC005575B5 /* BookTableViewCell.swift */; };
 		A85184402578F414005575B5 /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A851843F2578F414005575B5 /* BookViewController.swift */; };
-		A85184422578F5A4005575B5 /* BookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85184412578F5A4005575B5 /* BookView.swift */; };
 		A851844A257980E0005575B5 /* PageView_.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8518449257980E0005575B5 /* PageView_.swift */; };
 		A851844C2579811C005575B5 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A851844B2579811C005575B5 /* PageViewController.swift */; };
+		A8518454257E1A6D005575B5 /* Size+ConveinienceFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8518453257E1A6D005575B5 /* Size+ConveinienceFunctions.swift */; };
+		A85184562580CBA9005575B5 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A85184552580CBA9005575B5 /* Settings.bundle */; };
+		A85184582580DF4D005575B5 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85184572580DF4D005575B5 /* Settings.swift */; };
+		A851845A25820ADB005575B5 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A851845925820ADB005575B5 /* SettingsView.swift */; };
+		A851845C258245BF005575B5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A851845B258245BF005575B5 /* SettingsViewController.swift */; };
 		A8859CF6256C56D100E65923 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8859CF5256C56D100E65923 /* Library.swift */; };
 		A89E8CA4253D74AF00D8C685 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89E8CA3253D74AF00D8C685 /* PageView.swift */; };
 		A8A25C4F2507B24500101C4E /* BundeledStories in Resources */ = {isa = PBXBuildFile; fileRef = A8A25C4B2507A59100101C4E /* BundeledStories */; };
@@ -68,9 +72,13 @@
 		A851843425710839005575B5 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		A851843A2578CBDC005575B5 /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
 		A851843F2578F414005575B5 /* BookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
-		A85184412578F5A4005575B5 /* BookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookView.swift; sourceTree = "<group>"; };
 		A8518449257980E0005575B5 /* PageView_.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView_.swift; sourceTree = "<group>"; };
 		A851844B2579811C005575B5 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		A8518453257E1A6D005575B5 /* Size+ConveinienceFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Size+ConveinienceFunctions.swift"; sourceTree = "<group>"; };
+		A85184552580CBA9005575B5 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = AdventureBooks/Settings.bundle; sourceTree = "<group>"; };
+		A85184572580DF4D005575B5 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		A851845925820ADB005575B5 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A851845B258245BF005575B5 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A8859CF5256C56D100E65923 /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		A89E8CA3253D74AF00D8C685 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		A8A25C4B2507A59100101C4E /* BundeledStories */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BundeledStories; sourceTree = "<group>"; };
@@ -107,6 +115,8 @@
 			isa = PBXGroup;
 			children = (
 				A8518428256FA49F005575B5 /* BookAppDelegate.swift */,
+				A85184572580DF4D005575B5 /* Settings.swift */,
+				A85184552580CBA9005575B5 /* Settings.bundle */,
 				8AEADE2219DD6F63009F104C /* Library */,
 				8AED23B61BA6AF83008BB724 /* ViewControllers */,
 				8A8B88D919A212F400F53CA2 /* AdventureBooks */,
@@ -170,14 +180,16 @@
 		8AED23B61BA6AF83008BB724 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				A89E8CA3253D74AF00D8C685 /* PageView.swift */,
 				A851842E256FF007005575B5 /* LibraryViewController.swift */,
 				A851843425710839005575B5 /* LibraryView.swift */,
-				A851843F2578F414005575B5 /* BookViewController.swift */,
-				A8518449257980E0005575B5 /* PageView_.swift */,
-				A851844B2579811C005575B5 /* PageViewController.swift */,
-				A85184412578F5A4005575B5 /* BookView.swift */,
 				A851843A2578CBDC005575B5 /* BookTableViewCell.swift */,
+				A851843F2578F414005575B5 /* BookViewController.swift */,
+				A89E8CA3253D74AF00D8C685 /* PageView.swift */,
+				A851844B2579811C005575B5 /* PageViewController.swift */,
+				A8518449257980E0005575B5 /* PageView_.swift */,
+				A8518453257E1A6D005575B5 /* Size+ConveinienceFunctions.swift */,
+				A851845925820ADB005575B5 /* SettingsView.swift */,
+				A851845B258245BF005575B5 /* SettingsViewController.swift */,
 			);
 			name = ViewControllers;
 			path = AdventureBooks;
@@ -270,6 +282,7 @@
 				8A8B88DE19A212F400F53CA2 /* InfoPlist.strings in Resources */,
 				8AEADE2919DD8968009F104C /* books.jpg in Resources */,
 				8A8B88E619A212F400F53CA2 /* Images.xcassets in Resources */,
+				A85184562580CBA9005575B5 /* Settings.bundle in Resources */,
 				A8A25C4F2507B24500101C4E /* BundeledStories in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,14 +355,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8518429256FA49F005575B5 /* BookAppDelegate.swift in Sources */,
+				A85184582580DF4D005575B5 /* Settings.swift in Sources */,
 				A851842F256FF007005575B5 /* LibraryViewController.swift in Sources */,
 				A8859CF6256C56D100E65923 /* Library.swift in Sources */,
-				A85184422578F5A4005575B5 /* BookView.swift in Sources */,
 				A851843B2578CBDC005575B5 /* BookTableViewCell.swift in Sources */,
 				A89E8CA4253D74AF00D8C685 /* PageView.swift in Sources */,
 				A851844C2579811C005575B5 /* PageViewController.swift in Sources */,
+				A851845A25820ADB005575B5 /* SettingsView.swift in Sources */,
+				A851845C258245BF005575B5 /* SettingsViewController.swift in Sources */,
 				A851843525710839005575B5 /* LibraryView.swift in Sources */,
 				A85184402578F414005575B5 /* BookViewController.swift in Sources */,
+				A8518454257E1A6D005575B5 /* Size+ConveinienceFunctions.swift in Sources */,
 				A8A7E4D72567E74600712870 /* Page.swift in Sources */,
 				A8A7E4E3256A7D9100712870 /* Book.swift in Sources */,
 				A851844A257980E0005575B5 /* PageView_.swift in Sources */,

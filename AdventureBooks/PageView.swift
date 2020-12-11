@@ -141,7 +141,6 @@ class PageViewlksjdf: UIView {
         } else {
             imageViewSize = CGSize(width: size.width, height: size.width/aspectRatio)
         }
-        
         return imageViewSize
     }
 }

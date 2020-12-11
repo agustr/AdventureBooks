@@ -35,7 +35,8 @@ class BookViewController: UIPageViewController {
 }
 
 extension BookViewController: UIPageViewControllerDataSource {
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+    func pageViewController(_ pageViewController: UIPageViewController,
+                            viewControllerBefore viewController: UIViewController) -> UIViewController? {
         if let pageViewController = viewController as? PageViewController,
            let previousPage = self.book.pageBeforePage(page: pageViewController.page) {
             
@@ -44,7 +45,8 @@ extension BookViewController: UIPageViewControllerDataSource {
         return nil
     }
 
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+    func pageViewController(_ pageViewController: UIPageViewController,
+                            viewControllerAfter viewController: UIViewController) -> UIViewController? {
         if let pageViewController = viewController as? PageViewController,
            let nextPage = self.book.pageAfterPage(page: pageViewController.page) {
             

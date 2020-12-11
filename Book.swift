@@ -45,7 +45,9 @@ class Book {
     func getFilesWithPredicate(predicate: String) -> [URL] {
         var result: [URL] = []
         do {
-            let folderContents = try FileManager.default.contentsOfDirectory(at: sourceFolder, includingPropertiesForKeys: nil, options: FileManager.DirectoryEnumerationOptions.skipsHiddenFiles)
+            let fileManager = FileManager.default
+            let folderContents = try fileManager.contentsOfDirectory(at: sourceFolder, includingPropertiesForKeys: nil,
+                                                                     options: .skipsHiddenFiles)
             
             result = (folderContents.compactMap { (url) -> URL? in
                 url.lastPathComponent.hasPrefix(predicate) ? url : nil

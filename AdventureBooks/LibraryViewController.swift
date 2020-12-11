@@ -27,7 +27,18 @@ class LibraryViewController: UIViewController {
         libraryView.tableView.dataSource = self
         libraryView.tableView.delegate = self
         libraryView.tableView.register(BookTableViewCell.self, forCellReuseIdentifier: BookTableViewCell.reuseIdentifer)
+        
+        libraryView.settingsButton.addTarget(self, action: #selector(settingsButtonPressed), for: .touchUpInside)
         self.view = libraryView
+    }
+    
+    @objc func settingsButtonPressed() {
+        let settingsVC = SettingsViewController()
+        settingsVC.modalPresentationStyle = .popover
+        
+        present(settingsVC, animated: true) {
+           // stuffy thing
+        }
     }
 }
 
