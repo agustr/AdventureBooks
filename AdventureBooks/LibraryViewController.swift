@@ -54,7 +54,8 @@ extension LibraryViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell: UITableViewCell
-        if let bookCell = libraryView.tableView.dequeueReusableCell(withIdentifier: BookTableViewCell.reuseIdentifer) as? BookTableViewCell {
+        if let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: BookTableViewCell.reuseIdentifer),
+           let bookCell = dequeuedCell as? BookTableViewCell {
             bookCell.book = libraries[indexPath.section].books[indexPath.row]
             cell = bookCell
         } else {

@@ -99,14 +99,12 @@ class SettingsView: UIView {
     func setupConstraints() {
         stackView.autoPinEdge(toSuperviewEdge: .top, withInset: 8)
         stackView.autoPinEdge(toSuperviewEdge: .right, withInset: 20)
-//        stackView.autoPinEdge(toSuperviewEdge: .bottom, withInset: 0)
         stackView.autoPinEdge(toSuperviewEdge: .left, withInset: 20)
     }
     
     @objc func switchAction(sender: UISwitch, forEvent event: UIEvent) {
         print("switch: \(sender) did \(event)")
     }
-    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

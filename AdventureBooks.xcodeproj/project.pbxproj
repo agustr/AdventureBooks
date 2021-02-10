@@ -35,6 +35,7 @@
 		A8A25C4F2507B24500101C4E /* BundeledStories in Resources */ = {isa = PBXBuildFile; fileRef = A8A25C4B2507A59100101C4E /* BundeledStories */; };
 		A8A7E4D72567E74600712870 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A7E4D62567E74600712870 /* Page.swift */; };
 		A8A7E4E3256A7D9100712870 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A7E4E2256A7D9100712870 /* Book.swift */; };
+		A8DC242625D41F6800BB1033 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8DC242525D41F6800BB1033 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -84,6 +85,7 @@
 		A8A25C4B2507A59100101C4E /* BundeledStories */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BundeledStories; sourceTree = "<group>"; };
 		A8A7E4D62567E74600712870 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Page.swift; path = AdventureBooks/Page.swift; sourceTree = "<group>"; };
 		A8A7E4E2256A7D9100712870 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		A8DC242525D41F6800BB1033 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		FB693AFA3A214452C22543A8 /* Pods_aevintyri.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_aevintyri.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -114,6 +116,7 @@
 		8A8B88C719A212F400F53CA2 = {
 			isa = PBXGroup;
 			children = (
+				A8DC242425D41F2B00BB1033 /* StoryBoards */,
 				A8518428256FA49F005575B5 /* BookAppDelegate.swift */,
 				A85184572580DF4D005575B5 /* Settings.swift */,
 				A85184552580CBA9005575B5 /* Settings.bundle */,
@@ -207,6 +210,14 @@
 			name = Graphics;
 			sourceTree = "<group>";
 		};
+		A8DC242425D41F2B00BB1033 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				A8DC242525D41F6800BB1033 /* Launch Screen.storyboard */,
+			);
+			path = StoryBoards;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -283,6 +294,7 @@
 				8AEADE2919DD8968009F104C /* books.jpg in Resources */,
 				8A8B88E619A212F400F53CA2 /* Images.xcassets in Resources */,
 				A85184562580CBA9005575B5 /* Settings.bundle in Resources */,
+				A8DC242625D41F6800BB1033 /* Launch Screen.storyboard in Resources */,
 				A8A25C4F2507B24500101C4E /* BundeledStories in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

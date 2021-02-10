@@ -23,7 +23,8 @@ class Book {
         let images: [URL] = getFilesWithPredicate(predicate: "image")
         let audios: [URL] = getFilesWithPredicate(predicate: "audio")
         let texts: [URL] = getFilesWithPredicate(predicate: "text")
-        let numberOfPages = ([images.count, audios.count, texts.count].max() != nil) ? [images.count, audios.count, texts.count].max()! : 0
+        let numberOfPages = ([images.count, audios.count, texts.count].max() != nil) ?
+            [images.count, audios.count, texts.count].max()! : 0
         
         var tempPages: [Page] = []
         for _ in 0 ..< numberOfPages {

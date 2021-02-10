@@ -124,7 +124,9 @@ class PageViewlksjdf: UIView {
     func allowedImageSize(image: UIImage) -> CGSize {
         var remainingHeight: CGFloat = 0
         if showText {
-            remainingHeight = self.frame.size.height - textView.systemLayoutSizeFitting(CGSize(width: self.bounds.width, height: CGFloat(MAXFLOAT))).height
+            let sizeWidthConstrained = CGSize(width: self.bounds.width, height: CGFloat(MAXFLOAT))
+            let textHeight = textView.systemLayoutSizeFitting(sizeWidthConstrained).height
+            remainingHeight = self.frame.size.height - textHeight
         } else {
             remainingHeight = self.bounds.size.height
         }
