@@ -507,7 +507,7 @@
 			baseConfigurationReference = 6925FD8CF6ED9BE3082AFAE3 /* Pods-aevintyri.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -534,7 +534,7 @@
 			baseConfigurationReference = 182B3B5B8566996832C25A32 /* Pods-aevintyri.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
